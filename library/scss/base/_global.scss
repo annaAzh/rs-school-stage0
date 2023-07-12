@@ -1,0 +1,35 @@
+body {
+    @extend %inter-400;
+    font-size: 15px;
+    line-height: 40px;
+    letter-spacing: 2px;
+    color: $color-primary;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 0;
+    max-width: 1440зч;
+    margin: 0 auto;
+}
+
+.title {
+    @extend %forum-400;
+    font-size: 40px;
+    line-height: 40px;
+    color: $color-title;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    text-align: center;
+    padding-bottom: 21px;
+    margin-bottom: 40px;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 50px;
+        height: 1px;
+        color: $color-title;
+    }
+}
