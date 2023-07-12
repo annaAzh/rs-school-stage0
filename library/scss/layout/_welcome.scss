@@ -1,0 +1,25 @@
+.welcome {
+  background: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%), url(../assets/images/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 160px;
+  padding-top: 220px;
+}
+
+.welcome__title-box {
+  background-color: $color-title;
+  padding: 35px 40px;
+  max-width: 600px;
+  margin-left: -20px;
+}
+
+.welcome__title {
+  color: $color-white;
+  text-align: center;
+  @extend %forum-400;
+  font-size: 40px;
+  line-height: 50px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}

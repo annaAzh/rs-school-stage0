@@ -1,0 +1,51 @@
+.header {
+  background-color: $color-title;
+  padding: 20px 0;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  margin-right: 40px;
+  margin-left: auto;
+}
+
+.menu__list {
+  display: flex;
+  align-items: center;
+}
+
+.menu__item+.menu__item {
+  padding-left: 30px;
+}
+
+.menu__link {
+  color: $color-white;
+  font-size: 20px;
+  line-height: 50px;
+  letter-spacing: normal;
+  transition: all 0.3s ease-in;
+  padding-bottom: 3px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    transition: 0.3s ease-in;
+    height: 1px;
+    background-color: $color-accent;
+    width: 0%;
+  }
+
+  &:hover {
+    color: $color-accent;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+}
