@@ -1,6 +1,8 @@
 @import 'abstract/vars';
+@import 'abstract/mixins';
 @import 'base/fonts';
 @import 'base/normalize';
 @import 'base/global';
+@import 'base/burger';
 @import 'layout/header';
 @import 'layout/welcome';
