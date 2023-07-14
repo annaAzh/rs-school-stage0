@@ -50,3 +50,19 @@
   transform: translateY(-50%);
   left: 0;   
 }
+
+.burger--active.burger::before {
+  transform: translateY(-50%);
+  top:calc(50%);
+  transform:rotate(-45deg);
+}
+
+.burger--active.burger::after {
+  transform: translateY(-50%);
+  top:calc(50%);
+  transform:rotate(45deg);
+}
+
+.burger--active .burger__line {
+  display: none;
+}
