@@ -25,15 +25,20 @@ body {
     text-transform: capitalize;
     text-align: center;
     padding-bottom: 21px;
+    padding-top: 20px;
     margin-bottom: 40px;
+    position: relative;
     
     &::after {
         content: '';
         position: absolute;
         bottom: 0;
+        left: 0;
+        right: 0;
         width: 50px;
         height: 1px;
-        color: $color-title;
+        background-color: $color-title;
+        margin: 0 auto;
     }
 }
 
