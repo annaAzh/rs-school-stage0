@@ -8,10 +8,16 @@
 .slider-inner {
   width: 1400px;
   overflow: hidden;
+
   @include media-tablet {
-      width: 450px;
-      padding: 0 58px;
-      margin: 0 56px;
+    width: 450px;
+    padding: 0 58px;
+    margin: 0 56px;
+  }
+
+  @include media-mobile {
+    padding: 0;
+    margin: 0;
   }
 }
 
@@ -52,7 +58,7 @@
   cursor: pointer;
   padding: 5px;
 
-  & + .slider__dot {
+  &+.slider__dot {
     margin-left: 10px;
   }
 

@@ -126,6 +126,11 @@ body {
   background-color: #0C0C0E;
   margin: 0 auto;
 }
+@media (max-width: 484px) {
+  .title {
+    margin-bottom: 30px;
+  }
+}
 
 .noscroll {
   overflow: hidden;
@@ -349,6 +354,12 @@ body {
   margin-bottom: 20px;
   letter-spacing: 0;
 }
+@media (max-width: 484px) {
+  .about__text {
+    font-size: 16px;
+    line-height: 150%;
+  }
+}
 
 .slider-wrapper {
   display: flex;
@@ -366,6 +377,12 @@ body {
     width: 450px;
     padding: 0 58px;
     margin: 0 56px;
+  }
+}
+@media (max-width: 484px) {
+  .slider-inner {
+    padding: 0;
+    margin: 0;
   }
 }
 

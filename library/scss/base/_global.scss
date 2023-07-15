@@ -40,6 +40,10 @@ body {
         background-color: $color-title;
         margin: 0 auto;
     }
+
+    @include media-mobile {
+        margin-bottom: 30px;
+    }
 }
 
 .noscroll {
