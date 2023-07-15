@@ -9,6 +9,10 @@
   width: 1400px;
   overflow: hidden;
 
+  @include media-laptop {
+    width: 925px;
+  }
+
   @include media-tablet {
     width: 450px;
     padding: 0 58px;
@@ -29,6 +33,7 @@
 }
 
 .items {
+  position: relative;
   display: flex;
   column-gap: 25px;
 }
