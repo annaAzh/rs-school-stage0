@@ -1,0 +1,77 @@
+.shop__text {
+  color: $color-primary;
+  font-size: 20px;
+  margin-bottom: 40px;
+  text-align: justify;
+  text-align-last: center;
+  padding: 0 17px;
+}
+
+.menu-shop {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.menu-shop__column {
+  max-width: 482px;
+  margin-bottom: 40px;
+
+  &:first-child {
+    margin-right: 75px;
+  }
+  &:last-child {
+    margin-left: auto;
+    text-align: end;
+  }
+}
+
+.menu-shop__title {
+  @extend %forum-400;
+  color: $color-accent;
+  font-size: 40px;
+  font-weight: 400;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+}
+
+.menu-shop__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-shop__item {
+  display: flex;
+  align-items: center;
+
+  &+.menu-shop__item {
+    margin-top: 40px;
+  }
+}
+
+.menu-shop__item-name {
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-right: 60px;
+}
+
+.menu-shop__item-line {
+  display: block;
+  width: 100px;
+  height: 1px;
+  background-color: $color-accent;
+  margin-right: 60px;
+}
+
+.left-column .menu-shop__item-line {
+  margin-left: auto;
+}
+
+.right-column .menu-shop__list{
+  align-items: flex-end;
+}
+.menu-shop__item-price {
+  @extend %forum-400;
+  font-size: 20px;
+  text-transform: capitalize;
+}

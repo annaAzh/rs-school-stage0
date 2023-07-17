@@ -8,7 +8,7 @@ body {
   font-weight: 800;
 }
 
-.welcome__title, .title {
+.menu-shop__item-price, .menu-shop__title, .welcome__title, .title {
   font-family: "Forum", cursive;
   font-weight: 400;
 }
@@ -655,6 +655,81 @@ body {
 #summer-tab,
 #autumn-tab {
   display: none;
+}
+
+.shop__text {
+  color: #000000;
+  font-size: 20px;
+  margin-bottom: 40px;
+  text-align: justify;
+  text-align-last: center;
+  padding: 0 17px;
+}
+
+.menu-shop {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.menu-shop__column {
+  max-width: 482px;
+  margin-bottom: 40px;
+}
+.menu-shop__column:first-child {
+  margin-right: 75px;
+}
+.menu-shop__column:last-child {
+  margin-left: auto;
+  text-align: end;
+}
+
+.menu-shop__title {
+  color: #BB945F;
+  font-size: 40px;
+  font-weight: 400;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+}
+
+.menu-shop__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-shop__item {
+  display: flex;
+  align-items: center;
+}
+.menu-shop__item + .menu-shop__item {
+  margin-top: 40px;
+}
+
+.menu-shop__item-name {
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-right: 60px;
+}
+
+.menu-shop__item-line {
+  display: block;
+  width: 100px;
+  height: 1px;
+  background-color: #BB945F;
+  margin-right: 60px;
+}
+
+.left-column .menu-shop__item-line {
+  margin-left: auto;
+}
+
+.right-column .menu-shop__list {
+  align-items: flex-end;
+}
+
+.menu-shop__item-price {
+  font-size: 20px;
+  text-transform: capitalize;
 }
 
 /*# sourceMappingURL=style.css.map */
