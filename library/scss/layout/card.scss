@@ -48,6 +48,9 @@
   border-radius: 10px;
   border: none;
   height: 66px;
+  color: $color-accent;
+  letter-spacing: 0.6px;
+  outline: #BB945F;
 
   &+.holder__input {
     margin-top: 25px;

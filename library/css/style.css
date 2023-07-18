@@ -482,6 +482,7 @@ body {
 }
 
 .footer__address {
+  display: block;
   color: #FFFFFF;
   max-width: 229px;
   margin-bottom: 18px;
@@ -995,6 +996,9 @@ body {
   border-radius: 10px;
   border: none;
   height: 66px;
+  color: #BB945F;
+  letter-spacing: 0.6px;
+  outline: #BB945F;
 }
 .holder__input + .holder__input {
   margin-top: 25px;
