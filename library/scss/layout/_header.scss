@@ -19,7 +19,13 @@
   }
 }
 
-.logo {
+.header__title {
+  color: $color-white;
+  @extend %forum-400;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+
   @include media-mobile {
     width: 100vw;
     margin-bottom: 20px;

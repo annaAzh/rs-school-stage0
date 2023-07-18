@@ -8,7 +8,7 @@
   font-weight: 800;
 }
 
-.card__right-subtitle, .holder__input::placeholder, .holder__input, .holder__title, .menu-shop__item-price, .menu-shop__title, .welcome__title, .title {
+.card__right-subtitle, .holder__input::placeholder, .holder__input, .holder__title, .menu-shop__item-price, .menu-shop__title, .welcome__title, .header__title, .title {
   font-family: "Forum", cursive;
   font-weight: 400;
 }
@@ -225,8 +225,14 @@ body {
   }
 }
 
+.header__title {
+  color: #FFFFFF;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+}
 @media (max-width: 484px) {
-  .logo {
+  .header__title {
     width: 100vw;
     margin-bottom: 20px;
   }
