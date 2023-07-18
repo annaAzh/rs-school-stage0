@@ -3,7 +3,7 @@
   font-weight: 400;
 }
 
-.card__link, .holder__btn, .contacts__email, .contacts__mails, .contacts__phones, .tab-item__btn, .tab-item__title, .legend {
+.card__auth, .holder__btn, .contacts__email, .contacts__mails, .contacts__phones, .tab-item__btn, .tab-item__title, .legend {
   font-family: "Inter", sans-serif;
   font-weight: 800;
 }
@@ -634,6 +634,12 @@ body {
   letter-spacing: 1px;
   max-width: 75px;
   flex-shrink: 0;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+.tab-item__btn:hover {
+  background-color: #BB945F;
 }
 
 .tab-item__img-box {
@@ -964,6 +970,11 @@ body {
   letter-spacing: 1px;
   display: block;
   margin: 0 auto;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+.holder__btn:hover {
+  background-color: #BB945F;
 }
 
 .card__right-subtitle {
@@ -982,11 +993,11 @@ body {
   margin-bottom: 35px;
 }
 
-.card__link-box {
+.card__auth-box {
   text-align: right;
 }
 
-.card__link {
+.card__auth {
   padding: 9px 15.5px;
   border-radius: 2px;
   border: 1px solid #0C0C0E;
@@ -994,9 +1005,15 @@ body {
   font-size: 10px;
   line-height: 10px;
   letter-spacing: 1px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
 }
-.card__link + .card__link {
+.card__auth + .card__auth {
   margin-left: 20px;
+}
+.card__auth:hover {
+  background-color: #BB945F;
 }
 
 /*# sourceMappingURL=style.css.map */
