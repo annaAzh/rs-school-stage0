@@ -3,7 +3,7 @@ body {
   font-weight: 400;
 }
 
-.tab-item__btn, .tab-item__title, .legend {
+.contacts__email, .contacts__mails, .contacts__phones, .tab-item__btn, .tab-item__title, .legend {
   font-family: "Inter", sans-serif;
   font-weight: 800;
 }
@@ -789,6 +789,111 @@ body {
 .menu-shop__item-price {
   font-size: 20px;
   text-transform: capitalize;
+}
+
+.contacts__inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 40px;
+}
+
+@media (max-width: 1020px) {
+  .contacts__item:first-child {
+    margin-bottom: 80px;
+  }
+}
+@media (max-width: 484px) {
+  .contacts__item:first-child {
+    margin-bottom: 5px;
+  }
+}
+@media (max-width: 1020px) {
+  .contacts__item:last-child {
+    padding: 0 17px;
+  }
+}
+@media (max-width: 484px) {
+  .contacts__item:last-child {
+    padding: 0;
+  }
+}
+@media (max-width: 1020px) {
+  .contacts__item {
+    grid-column: span 2;
+  }
+}
+
+.contacts__phones {
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+}
+@media (max-width: 484px) {
+  .contacts__phones {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+}
+
+.contacts__phone {
+  font-size: 20px;
+  text-transform: capitalize;
+}
+.contacts__phone + .contacts__phone {
+  margin-top: 20px;
+}
+@media (max-width: 484px) {
+  .contacts__phone + .contacts__phone {
+    margin-top: 12px;
+  }
+}
+@media (max-width: 484px) {
+  .contacts__phone {
+    font-size: 16px;
+  }
+}
+
+.contacts__tel {
+  transition: all 0.3s;
+}
+.contacts__tel:hover {
+  color: #BB945F;
+}
+
+.contacts__mails {
+  padding-top: 40px;
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+@media (max-width: 484px) {
+  .contacts__mails {
+    font-size: 16px;
+  }
+}
+
+.contacts__mail {
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+@media (max-width: 484px) {
+  .contacts__mail {
+    font-size: 16px;
+  }
+}
+
+.contacts__email {
+  transition: all 0.3s;
+}
+.contacts__email:hover {
+  color: #BB945F;
+}
+
+.contacts__img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=style.css.map */
