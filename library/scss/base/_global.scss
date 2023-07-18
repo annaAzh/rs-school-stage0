@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     @extend %inter-400;
     font-size: 15px;
