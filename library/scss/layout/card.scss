@@ -1,0 +1,113 @@
+.card {
+  margin-bottom: 41px;
+}
+
+.card__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__subtitle {
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 0.6px;
+  margin-bottom: 24px;
+  @extend %inter-400;
+}
+
+.holder {
+  width: 600px;
+  border: 3px solid #BB945F;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 20px 17px 30px 17px;
+}
+
+.holder__inner {
+  padding: 20px 20px 25px 20px;
+  background-color: $color-accent;
+  margin-bottom: 20px;
+}
+
+.holder__title {
+  @extend %forum-400;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+  margin-bottom: 20px;
+}
+
+.holder__input {
+  @extend %forum-400;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+  display: block;
+  width: 100%;
+  padding: 8px 20px;
+  background-color: $color-white;
+  border-radius: 10px;
+  border: none;
+  height: 66px;
+
+  &+.holder__input {
+    margin-top: 25px;
+  }
+
+  &::placeholder {
+    color: $color-grey;
+    @extend %forum-400;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: 0.6px;
+  }
+}
+
+.holder__btn {
+  padding: 10px 40px;
+  border-radius: 2px;
+  border: 1px solid $color-title;
+  background-color: $color-white;
+  color: $color-title;
+  @extend %inter-800;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  display: block;
+  margin: 0 auto;
+}
+
+.card__right-subtitle {
+  line-height: 30px;
+  @extend %forum-400;
+  font-size: 30px;
+  letter-spacing: 0.6px;
+  margin-bottom: 35px;
+  text-align: right;
+}
+
+.card__text {
+  max-width: 456px;
+  text-align: right;
+  font-size: 20px;
+  letter-spacing: 0.4px;
+  margin-bottom: 35px;
+}
+
+.card__link-box {
+  text-align: right;
+}
+
+.card__link {
+  padding: 9px 15.5px;
+  border-radius: 2px;
+  border: 1px solid $color-title;
+  color: $color-title;
+  @extend %inter-800;
+  font-size: 10px;
+  line-height: 10px;
+  letter-spacing: 1px;
+
+  &+.card__link {
+    margin-left: 20px;
+  }
+}
