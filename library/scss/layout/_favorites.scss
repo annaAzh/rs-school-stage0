@@ -5,43 +5,41 @@
 }
 
 .legend {
-  display: table;
-  float: left;
   margin: 0;
   padding: 0;
   width: 100%;
-
+  line-height: 20px;
   color: $color-primary;
   @extend %inter-800;
   font-size: 20px;
   margin-bottom: 40px;
   letter-spacing: normal;
-
-  // margin-inline-start: 0px;
-  // margin-inline-end: 0px;
-  // padding-block-start: 0em;
-  // padding-inline-start: 0em;
-  // padding-inline-end: 0em;
-  // padding-block-end: 0em;
   // font-weight: 700?????;
-
-  +* {
-    clear: both;
-  }
 }
 
 .inputs__box {
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 29px;
 }
 
-.input__box + .input__box {
-  margin-left: 90px;
+.input__box+.input__box {
+  margin-left: 80px;
 }
+
 .label {
-font-size: 20px;
-line-height: 1;
-cursor: pointer;
+  padding: 5px;
+  cursor: pointer;
+
+  &:first-child {
+    margin-left: -5px;
+  }
+}
+
+.label__name {
+  @extend %inter-400;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: normal;
 }
 
 .input {
@@ -53,29 +51,27 @@ cursor: pointer;
 }
 
 .radio {
-display: inline-block;
-height: 17px;
-width: 17px;
-border-radius: 50%;
-border: 2px solid $color-primary;
-margin-right: 20px;
-position: relative;
+  display: inline-block;
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  border: 2px solid $color-primary;
+  margin-right: 20px;
+  position: relative;
+  letter-spacing: normal;
 }
 
-.input:checked + .radio::after {
-    content: '';
-    position: absolute;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background-color: $color-primary;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.input:checked+.radio::after {
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: $color-primary;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-
-
-
 
 .tab__content {
   padding-right: 40px;
@@ -87,12 +83,13 @@ position: relative;
   row-gap: 40px;
   column-gap: 260px;
   margin-bottom: 40px;
-  
 }
 
 .tab__item {
-  padding: 15px 175px 15px 20px;
+  padding: 14px 20px 14px 20px;
+  // padding: 15px 175px 15px 20px;
 }
+
 .tab-item {
   display: flex;
   flex-direction: column;
@@ -101,12 +98,13 @@ position: relative;
 }
 
 .tab-item__span {
+  @extend %forum-400;
+  line-height: 40px;
+  letter-spacing: 2px;
   display: block;
-  // color: $color-primary;
   font-size: 20px;
   text-transform: capitalize;
   margin-bottom: 20px;
-  padding-bottom: 8px;
   position: relative;
 
   &::after {
@@ -121,13 +119,19 @@ position: relative;
 }
 
 .tab-item__title {
-  // max-width: 168px;
   @extend %inter-800;
   margin-bottom: 20px;
   // font-weight: 700;
   text-transform: capitalize;
+  letter-spacing: 2px;
+  font-size: 15px;
+  line-height: 40px;
 }
+
 .tab-item__title-span {
+  @extend %inter-800;
+  font-size: 15px;
+  line-height: 40px;
   display: block;
   text-transform: uppercase;
 }
@@ -141,7 +145,10 @@ position: relative;
 }
 
 .tab-item__btn {
-  padding: 9px 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
   border-radius: 2px;
   border: 1px solid $color-title;
   color: $color-primary;
@@ -158,6 +165,7 @@ position: relative;
 
   &:hover {
     background-color: $color-accent;
+    border-color: $color-accent;
   }
 }
 
@@ -179,4 +187,10 @@ position: relative;
 #summer-tab,
 #autumn-tab {
   display: none;
+}
+
+.tab-item__btn.tab-item__btn--disabled {
+  color: #BB945F;
+  border-color: #BB945F;
+  pointer-events: none;
 }

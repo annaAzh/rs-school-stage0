@@ -1,14 +1,14 @@
-.card__subtitle, body {
+.card__subtitle, .label__name, body {
   font-family: "Inter", sans-serif;
   font-weight: 400;
 }
 
-.card__auth, .holder__btn, .contacts__email, .contacts__mails, .contacts__phones, .tab-item__btn, .tab-item__title, .legend {
+.card__auth, .holder__btn, .contacts__email, .contacts__mails, .contacts__phones, .tab-item__btn, .tab-item__title-span, .tab-item__title, .legend {
   font-family: "Inter", sans-serif;
   font-weight: 800;
 }
 
-.card__right-subtitle, .holder__input::placeholder, .holder__input, .holder__title, .menu-shop__item-price, .menu-shop__title, .welcome__title, .header__title, .title {
+.card__right-subtitle, .holder__input::placeholder, .holder__input, .holder__title, .menu-shop__item-price, .menu-shop__title, .tab-item__span, .welcome__title, .header__title, .title {
   font-family: "Forum", cursive;
   font-weight: 400;
 }
@@ -532,33 +532,37 @@ body {
 }
 
 .legend {
-  display: table;
-  float: left;
   margin: 0;
   padding: 0;
   width: 100%;
+  line-height: 20px;
   color: #000000;
   font-size: 20px;
   margin-bottom: 40px;
   letter-spacing: normal;
 }
-.legend + * {
-  clear: both;
-}
 
 .inputs__box {
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 29px;
 }
 
 .input__box + .input__box {
-  margin-left: 90px;
+  margin-left: 80px;
 }
 
 .label {
-  font-size: 20px;
-  line-height: 1;
+  padding: 5px;
   cursor: pointer;
+}
+.label:first-child {
+  margin-left: -5px;
+}
+
+.label__name {
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: normal;
 }
 
 .input {
@@ -577,6 +581,7 @@ body {
   border: 2px solid #000000;
   margin-right: 20px;
   position: relative;
+  letter-spacing: normal;
 }
 
 .input:checked + .radio::after {
@@ -604,7 +609,7 @@ body {
 }
 
 .tab__item {
-  padding: 15px 175px 15px 20px;
+  padding: 14px 20px 14px 20px;
 }
 
 .tab-item {
@@ -615,11 +620,12 @@ body {
 }
 
 .tab-item__span {
+  line-height: 40px;
+  letter-spacing: 2px;
   display: block;
   font-size: 20px;
   text-transform: capitalize;
   margin-bottom: 20px;
-  padding-bottom: 8px;
   position: relative;
 }
 .tab-item__span::after {
@@ -635,9 +641,14 @@ body {
 .tab-item__title {
   margin-bottom: 20px;
   text-transform: capitalize;
+  letter-spacing: 2px;
+  font-size: 15px;
+  line-height: 40px;
 }
 
 .tab-item__title-span {
+  font-size: 15px;
+  line-height: 40px;
   display: block;
   text-transform: uppercase;
 }
@@ -651,7 +662,10 @@ body {
 }
 
 .tab-item__btn {
-  padding: 9px 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
   border-radius: 2px;
   border: 1px solid #0C0C0E;
   color: #000000;
@@ -666,6 +680,7 @@ body {
 }
 .tab-item__btn:hover {
   background-color: #BB945F;
+  border-color: #BB945F;
 }
 
 .tab-item__img-box {
@@ -686,6 +701,12 @@ body {
 #summer-tab,
 #autumn-tab {
   display: none;
+}
+
+.tab-item__btn.tab-item__btn--disabled {
+  color: #BB945F;
+  border-color: #BB945F;
+  pointer-events: none;
 }
 
 .shop__text {
@@ -1001,6 +1022,7 @@ body {
 }
 .holder__btn:hover {
   background-color: #BB945F;
+  border-color: #BB945F;
 }
 
 .card__right-subtitle {
@@ -1040,6 +1062,7 @@ body {
 }
 .card__auth:hover {
   background-color: #BB945F;
+  border-color: #BB945F;
 }
 
 /*# sourceMappingURL=style.css.map */
