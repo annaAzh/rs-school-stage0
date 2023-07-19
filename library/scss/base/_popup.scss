@@ -1,0 +1,60 @@
+.popup-auth {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: rgba($color: $color-primary, $alpha: 0.3);
+  min-height: 100vh;
+  width: 100%;
+}
+
+.popup-auth__inner {
+  // width: 80px;
+  // height: 115px;
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  background-color: $color-white;
+  z-index: 15;
+}
+
+.popup-auth__content {
+  padding: 5px 10px 20px;
+  text-align: center;
+  
+}
+
+.popup-auth__title {
+  @extend %inter-800;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: normal;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    height: 1px;
+    background-color: $color-accent;
+  }
+}
+
+.popup-auth__link {
+  display: block;
+  letter-spacing: normal;
+  @extend %inter-400;
+  font-size: 15px;
+  line-height: 20px;
+
+  &+.popup-auth__link {
+    margin-top: 10px;
+  }
+}
