@@ -1,0 +1,121 @@
+.header {
+  background-color: $color-title;
+  padding: 20px 0;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+
+  @include media-mobile {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.header-top.header-top--active .menu__list {
+  @include media-laptop {
+    transform: translateX(0%);
+  }
+}
+
+.header__title {
+  color: $color-white;
+  @extend %forum-400;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+
+  @include media-mobile {
+    width: 100vw;
+    margin-bottom: 20px;
+  }
+}
+
+.menu {
+  margin-right: 40px;
+  margin-left: auto;
+
+  @include media-laptop {
+    order: 3;
+    margin-right: 0;
+    margin-left: 40px;
+  }
+}
+
+.menu__list {
+  display: flex;
+  align-items: center;
+
+  @include media-laptop {
+    flex-direction: column;
+    transform: translateX(100%);
+    width: 332px;
+    height: 570px;
+    row-gap: 27px;
+    background: $color-primary;
+    padding: 100px 107px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    transform: translateX(100%);
+    transition: all 0.3s;
+  }
+}
+
+.menu__item+.menu__item {
+  padding-left: 30px;
+
+  @include media-laptop {
+    padding-left: 0;
+  }
+}
+
+.menu__link {
+  color: $color-white;
+  font-size: 20px;
+  line-height: 50px;
+  letter-spacing: normal;
+  transition: all 0.3s ease-in;
+  padding-bottom: 3px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    transition: 0.3s ease-in;
+    height: 1px;
+    background-color: $color-accent;
+    width: 0%;
+  }
+
+  &:hover {
+    color: $color-accent;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+}
+
+.user-nav {
+  opacity: 1;
+  transition: all 0.3s ease-in;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  @include media-laptop {
+    margin-left: auto;
+    z-index: 11;
+  }
+
+  @include media-mobile {
+    margin-left: 0;
+  }
+}

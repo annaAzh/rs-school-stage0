@@ -1,0 +1,105 @@
+.contacts__inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 36px;
+}
+
+.contacts__item {
+  &:first-child {
+    @include media-laptop {
+      margin-bottom: 80px;
+    }
+
+    @include media-mobile {
+      margin-bottom: 5px;
+    }
+  }
+
+  &:last-child {
+    @include media-laptop {
+      padding: 0 17px;
+    }
+
+    @include media-mobile {
+      padding: 0;
+    }
+  }
+
+  @include media-laptop {
+    grid-column: span 2;
+  }
+}
+
+.contacts__phones {
+  @extend %inter-700;
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+
+  @include media-mobile {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+}
+
+.contacts__phone {
+  font-size: 20px;
+  text-transform: capitalize;
+
+  &+.contacts__phone {
+    margin-top: 20px;
+
+    @include media-mobile {
+      margin-top: 12px;
+    }
+  }
+
+  @include media-mobile {
+    font-size: 16px;
+  }
+}
+
+.contacts__tel {
+  transition: all 0.3s;
+
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+.contacts__mails {
+  padding-top: 40px;
+  @extend %inter-700;
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+
+  @include media-mobile {
+    font-size: 16px;
+  }
+}
+
+.contacts__mail {
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+
+  @include media-mobile {
+    font-size: 16px;
+  }
+}
+
+.contacts__email {
+  @extend %inter-700;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+.contacts__img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}

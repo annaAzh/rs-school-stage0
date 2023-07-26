@@ -1,0 +1,195 @@
+.fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.legend {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  line-height: 20px;
+  color: $color-primary;
+  @extend %inter-700;
+  font-size: 20px;
+  margin-bottom: 40px;
+  letter-spacing: normal;
+}
+
+.inputs__box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 720px;
+  gap: 0 60px;
+  margin-bottom: 29px;
+}
+
+.label {
+  padding: 5px;
+  cursor: pointer;
+
+  &:first-child {
+    margin-left: -5px;
+  }
+}
+
+.label__name {
+  @extend %inter-400;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: normal;
+}
+
+.input:checked ~ .label__name {
+  @extend %inter-700;
+}
+
+.input {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.radio {
+  display: inline-block;
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  border: 2px solid $color-primary;
+  margin-right: 20px;
+  position: relative;
+  letter-spacing: normal;
+}
+
+.input:checked+.radio::after {
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: $color-primary;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tab__content {
+  padding-right: 40px;
+}
+
+.tab__items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 40px;
+  column-gap: 260px;
+  margin-bottom: 40px;
+}
+
+.tab__item {
+  padding: 14px 20px 14px 20px;
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid $color-primary;
+}
+
+.tab-item__span {
+  @extend %forum-400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  display: block;
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 1px;
+    background-color: $color-accent;
+  }
+}
+
+.tab-item__title {
+  @extend %inter-700;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  font-size: 15px;
+  line-height: 40px;
+}
+
+.tab-item__title-span {
+  @extend %inter-700;
+  font-size: 15px;
+  line-height: 40px;
+  display: block;
+  text-transform: uppercase;
+}
+
+.tab-item__text {
+  max-width: 355px;
+  text-transform: capitalize;
+  margin-bottom: 15px;
+  line-height: 40px;
+  flex-grow: 1;
+}
+
+.tab-item__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  border-radius: 2px;
+  border: 1px solid $color-title;
+  color: $color-primary;
+  font-size: 10px;
+  line-height: 10px;
+  @extend %inter-700;
+  letter-spacing: 1px;
+  max-width: 75px;
+  flex-shrink: 0;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+
+  &:hover {
+    background-color: $color-accent;
+    border-color: $color-accent;
+  }
+}
+
+.tab-item__img-box {
+  position: absolute;
+  bottom: -1px;
+  right: -40px;
+  width: 200px;
+  height: 300px;
+}
+
+.tab-item__img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+#spring-tab,
+#summer-tab,
+#autumn-tab {
+  display: none;
+}
+
+.tab-item__btn.tab-item__btn--disabled {
+  color: #BB945F;
+  border-color: #BB945F;
+  pointer-events: none;
+}
