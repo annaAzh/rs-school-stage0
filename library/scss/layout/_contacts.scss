@@ -1,7 +1,7 @@
 .contacts__inner {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 
 .contacts__item {
@@ -31,7 +31,7 @@
 }
 
 .contacts__phones {
-  @extend %inter-800;
+  @extend %inter-700;
   font-size: 20px;
   text-transform: capitalize;
   margin-bottom: 40px;
@@ -69,7 +69,7 @@
 
 .contacts__mails {
   padding-top: 40px;
-  @extend %inter-800;
+  @extend %inter-700;
   font-size: 20px;
   text-transform: capitalize;
   margin-bottom: 20px;
@@ -90,7 +90,7 @@
 }
 
 .contacts__email {
-  @extend %inter-800;
+  @extend %inter-700;
   transition: all 0.3s;
 
   &:hover {

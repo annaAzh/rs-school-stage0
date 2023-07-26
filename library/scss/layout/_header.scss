@@ -53,7 +53,7 @@
     width: 332px;
     height: 570px;
     row-gap: 27px;
-    background: #000;
+    background: $color-primary;
     padding: 100px 107px;
     justify-content: center;
     align-items: center;
@@ -105,10 +105,11 @@
 .user-nav {
   opacity: 1;
   transition: all 0.3s ease-in;
+
   &:hover {
     opacity: 0.7;
   }
-  
+
   @include media-laptop {
     margin-left: auto;
     z-index: 11;

@@ -562,8 +562,8 @@
               <form class="card__holder-form holder">
                 <div class="holder__inner">
                   <h3 class="holder__title">Brooklyn Public Library</h3>
-                  <input class="holder__input" type="text" placeholder="Reader's name">
-                  <input class="holder__input" type="number" placeholder="Card number">
+                  <input class="holder__input" type="text" placeholder="Reader's name" pattern="[A-Za-z\s]+$" required>
+                  <input class="holder__input" type="text" placeholder="Card number" pattern="[0-9-\s]+$" required>
                 </div>
                 <button class="holder__btn" type="submit">Check the card</button>
               </form>
@@ -573,8 +573,8 @@
               <p class="card__text">You will be able to see a reader card after logging into account or you can register
                 a new account</p>
               <div class="card__auth-box">
-                <button class="card__auth" href="#">Sign Up</button>
-                <button class="card__auth" href="#">Log in</button>
+                <button class="card__auth">Sign Up</button>
+                <button class="card__auth">Log in</button>
               </div>
             </div>
           </div>
@@ -629,6 +629,58 @@
           <h5 class="popup-auth__title">Profile</h5>
           <a class="popup-auth__link" href="#">Log In</a>
           <a class="popup-auth__link" href="#">Register</a>
+        </div>
+      </div>
+    </div>
+    <div class="popup-profile">
+      <div class="popup-profile__inner">
+        <div class="popup-profile__content">
+          <span class="popup-profile__close"></span>
+          <div class="popup-profile__column">
+            <img class="popup-profile__img" src="assets/images/avatar.jpg" alt="JD">
+            <p class="popup-profile__name">John Doe</p>
+          </div>
+          <div class="popup-profile__column">
+            <h3 class="popup-profile__title">My profile</h3>
+            <div class="popup-profile__stat">
+              <div class="popup-profile__visits">
+                <span>Visits</span>
+                <img src="assets/icons/visits.svg" alt="visits">
+                <span id="visits">23</span>
+              </div>
+              <div class="popup-profile__bonuses">
+                <span>Bonuses</span>
+                <img src="assets/icons/bonuses.svg" alt="bonuses">
+                <span id="bonuses">1240</span>
+              </div>
+              <div class="popup-profile__books">
+                <span>Books</span>
+                <img src="assets/icons/book.svg" alt="books">
+                <span id="books">23</span>
+              </div>
+            </div>
+            <h5 class="popup-profile__subtitle">Rented books</h5>
+            <ul class="popup-profile__list">
+              <li class="popup-profile__item">
+              <a class="popup-profile__link" href="#">
+                The Last Queen, Clive Irving
+              </a>
+            </li>
+              <li class="popup-profile__item">
+              <a class="popup-profile__link" href="#">
+                Dominicana, Angie Cruz
+              </a>
+            </li>
+            </ul>
+            <div class="popup-profile__card">
+              Card number
+              <span>F00234030</span>
+              <button class="popup-profile__copy">
+                <img class="popup-profile__copy-img" src="assets/icons/copy.svg" alt="copy image">
+              </button>
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>

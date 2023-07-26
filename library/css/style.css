@@ -3,9 +3,9 @@
   font-weight: 400;
 }
 
-.card__auth, .holder__btn, .contacts__email, .contacts__mails, .contacts__phones, .tab-item__btn, .tab-item__title-span, .tab-item__title, .legend, .popup-auth__title {
+.card__auth, .holder__btn, .contacts__email, .contacts__mails, .contacts__phones, .tab-item__btn, .tab-item__title-span, .tab-item__title, .input:checked ~ .label__name, .legend, .popup-auth__title {
   font-family: "Inter", sans-serif;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .card__right-subtitle, .holder__input::placeholder, .holder__input, .holder__title, .menu-shop__item-price, .menu-shop__title, .tab-item__span, .welcome__title, .header__title, .title {
@@ -107,6 +107,7 @@ body {
 }
 
 .container {
+  max-width: 1440px;
   padding: 0 20px;
   margin: 0 auto;
 }
@@ -261,6 +262,10 @@ body {
   margin-top: 10px;
 }
 
+.popup-profile {
+  display: none;
+}
+
 .header {
   background-color: #0C0C0E;
   padding: 20px 0;
@@ -319,7 +324,7 @@ body {
     width: 332px;
     height: 570px;
     row-gap: 27px;
-    background: #000;
+    background: #000000;
     padding: 100px 107px;
     justify-content: center;
     align-items: center;
@@ -598,12 +603,11 @@ body {
 }
 
 .inputs__box {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 720px;
+  gap: 0 60px;
   margin-bottom: 29px;
-}
-
-.input__box + .input__box {
-  margin-left: 80px;
 }
 
 .label {
@@ -901,7 +905,7 @@ body {
 .contacts__inner {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 
 @media (max-width: 1020px) {

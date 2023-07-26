@@ -10,20 +10,18 @@
   width: 100%;
   line-height: 20px;
   color: $color-primary;
-  @extend %inter-800;
+  @extend %inter-700;
   font-size: 20px;
   margin-bottom: 40px;
   letter-spacing: normal;
-  // font-weight: 700?????;
 }
 
 .inputs__box {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 720px;
+  gap: 0 60px;
   margin-bottom: 29px;
-}
-
-.input__box+.input__box {
-  margin-left: 80px;
 }
 
 .label {
@@ -40,6 +38,10 @@
   font-size: 20px;
   line-height: 20px;
   letter-spacing: normal;
+}
+
+.input:checked ~ .label__name {
+  @extend %inter-700;
 }
 
 .input {
@@ -87,7 +89,6 @@
 
 .tab__item {
   padding: 14px 20px 14px 20px;
-  // padding: 15px 175px 15px 20px;
 }
 
 .tab-item {
@@ -119,9 +120,8 @@
 }
 
 .tab-item__title {
-  @extend %inter-800;
+  @extend %inter-700;
   margin-bottom: 20px;
-  // font-weight: 700;
   text-transform: capitalize;
   letter-spacing: 2px;
   font-size: 15px;
@@ -129,7 +129,7 @@
 }
 
 .tab-item__title-span {
-  @extend %inter-800;
+  @extend %inter-700;
   font-size: 15px;
   line-height: 40px;
   display: block;
@@ -154,8 +154,7 @@
   color: $color-primary;
   font-size: 10px;
   line-height: 10px;
-  // font-weight: 700;
-  @extend %inter-800;
+  @extend %inter-700;
   letter-spacing: 1px;
   max-width: 75px;
   flex-shrink: 0;
