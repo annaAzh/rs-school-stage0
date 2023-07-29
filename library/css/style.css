@@ -102,7 +102,7 @@ body {
 }
 
 .wrapper {
-  width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -610,6 +610,12 @@ body {
   margin-bottom: 29px;
 }
 
+@media screen and (max-width: 730px) {
+  .input__box {
+    grid-column: span 4;
+  }
+}
+
 .label {
   padding: 5px;
   cursor: pointer;
@@ -658,17 +664,39 @@ body {
 .tab__content {
   padding-right: 40px;
 }
+@media (max-width: 624px) {
+  .tab__content {
+    padding-right: 0px;
+  }
+}
 
 .tab__items {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 40px;
-  column-gap: 260px;
   margin-bottom: 40px;
+  column-gap: calc(100% - 1100px);
+  grid-auto-columns: minmax(300px, auto);
+  grid-auto-rows: minmax(555px, auto);
 }
 
 .tab__item {
-  padding: 14px 20px 14px 20px;
+  padding: 14px 175px 14px 20px;
+}
+@media screen and (max-width: 1240px) {
+  .tab__item {
+    padding: 14px 160px 14px 20px;
+    grid-column: span 2;
+    margin-left: 69px;
+    margin-right: 69px;
+  }
+}
+@media (max-width: 624px) {
+  .tab__item {
+    padding: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 }
 
 .tab-item {
@@ -696,6 +724,11 @@ body {
   height: 1px;
   background-color: #BB945F;
 }
+@media (max-width: 484px) {
+  .tab-item__span {
+    margin-bottom: 10px;
+  }
+}
 
 .tab-item__title {
   margin-bottom: 20px;
@@ -704,12 +737,27 @@ body {
   font-size: 15px;
   line-height: 40px;
 }
+@media (max-width: 624px) {
+  .tab-item__title {
+    order: 1;
+  }
+}
+@media (max-width: 484px) {
+  .tab-item__title {
+    margin-bottom: 0px;
+  }
+}
 
 .tab-item__title-span {
   font-size: 15px;
   line-height: 40px;
   display: block;
   text-transform: uppercase;
+}
+@media (max-width: 624px) {
+  .tab-item__title-span {
+    order: 2;
+  }
 }
 
 .tab-item__text {
@@ -718,6 +766,19 @@ body {
   margin-bottom: 15px;
   line-height: 40px;
   flex-grow: 1;
+}
+@media (max-width: 624px) {
+  .tab-item__text {
+    order: 5;
+    max-width: 100%;
+  }
+}
+@media (max-width: 484px) {
+  .tab-item__text {
+    font-size: 14px;
+    line-height: 26px;
+    text-transform: initial;
+  }
 }
 
 .tab-item__btn {
@@ -741,6 +802,11 @@ body {
   background-color: #BB945F;
   border-color: #BB945F;
 }
+@media (max-width: 624px) {
+  .tab-item__btn {
+    order: 6;
+  }
+}
 
 .tab-item__img-box {
   position: absolute;
@@ -748,6 +814,13 @@ body {
   right: -40px;
   width: 200px;
   height: 300px;
+}
+@media (max-width: 624px) {
+  .tab-item__img-box {
+    position: static;
+    margin: 10px auto;
+    order: 4;
+  }
 }
 
 .tab-item__img {
