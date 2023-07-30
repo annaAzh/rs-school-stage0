@@ -681,7 +681,8 @@ body {
 }
 
 .tab__item {
-  padding: 14px 175px 14px 20px;
+  height: 555px;
+  padding: 14px 170px 14px 20px;
 }
 @media screen and (max-width: 1240px) {
   .tab__item {
