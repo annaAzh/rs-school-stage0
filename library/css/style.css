@@ -980,6 +980,11 @@ body {
   grid-template-columns: repeat(2, 1fr);
   margin-bottom: 36px;
 }
+@media (max-width: 768px) {
+  .contacts__inner {
+    margin-bottom: 40px;
+  }
+}
 
 @media (max-width: 1020px) {
   .contacts__item:first-child {
@@ -1088,6 +1093,12 @@ body {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 1020px) {
+  .card__inner {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
 
 .card__subtitle {
   text-align: center;
@@ -1102,11 +1113,27 @@ body {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   padding: 20px 17px 30px 17px;
 }
+@media (max-width: 1020px) {
+  .holder {
+    margin-bottom: 21px;
+  }
+}
+@media (max-width: 484px) {
+  .holder {
+    padding: 0px 0px 10px 0px;
+    width: 100%;
+  }
+}
 
 .holder__inner {
   padding: 20px 20px 25px 20px;
   background-color: #BB945F;
   margin-bottom: 20px;
+}
+@media (max-width: 484px) {
+  .holder__inner {
+    padding: 10px 10px 15px 10px;
+  }
 }
 
 .holder__title {
@@ -1114,6 +1141,12 @@ body {
   line-height: 50px;
   letter-spacing: 0.6px;
   margin-bottom: 20px;
+}
+@media (max-width: 484px) {
+  .holder__title {
+    font-size: 22px;
+    line-height: 120%;
+  }
 }
 
 .holder__input {
@@ -1131,6 +1164,13 @@ body {
   letter-spacing: 0.6px;
   outline: #BB945F;
 }
+@media (max-width: 484px) {
+  .holder__input {
+    font-size: 22px;
+    line-height: 120%;
+    height: 40px;
+  }
+}
 .holder__input + .holder__input {
   margin-top: 25px;
 }
@@ -1139,6 +1179,12 @@ body {
   font-size: 30px;
   line-height: 50px;
   letter-spacing: 0.6px;
+}
+@media (max-width: 484px) {
+  .holder__input::placeholder {
+    font-size: 22px;
+    line-height: 120%;
+  }
 }
 
 .holder__btn {
@@ -1167,6 +1213,12 @@ body {
   margin-bottom: 35px;
   text-align: right;
 }
+@media (max-width: 1020px) {
+  .card__right-subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
 
 .card__text {
   max-width: 456px;
@@ -1175,13 +1227,25 @@ body {
   letter-spacing: 0.4px;
   margin-bottom: 35px;
 }
+@media (max-width: 1020px) {
+  .card__text {
+    max-width: 600px;
+    text-align: center;
+  }
+}
 
 .card__auth-box {
   text-align: right;
 }
+@media (max-width: 1020px) {
+  .card__auth-box {
+    text-align: center;
+  }
+}
 
 .card__auth {
-  padding: 9px 15.5px;
+  width: 75px;
+  height: 30px;
   border-radius: 2px;
   border: 1px solid #0C0C0E;
   color: #0C0C0E;
@@ -1193,7 +1257,7 @@ body {
   transition: all 0.3s ease-in;
 }
 .card__auth + .card__auth {
-  margin-left: 20px;
+  margin-left: 14px;
 }
 .card__auth:hover {
   background-color: #BB945F;
