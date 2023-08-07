@@ -38,8 +38,8 @@
 
   @include media-laptop {
     order: 3;
-    margin-right: 0;
-    margin-left: 40px;
+    margin-right: -6px;
+    margin-left: 34px;
   }
 }
 
@@ -71,6 +71,7 @@
 
   @include media-laptop {
     padding-left: 0;
+    padding-top: 3px;
   }
 }
 

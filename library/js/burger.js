@@ -17,7 +17,7 @@ const burger = () => {
   function closeMenu() {
     header.classList.remove('header-top--active');
     document.body.classList.remove('noscroll');
-    tn.classList.remove('burger--active');
+    btn.classList.remove('burger--active');
   }
 
 }
