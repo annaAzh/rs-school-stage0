@@ -16,6 +16,7 @@
 .header-top.header-top--active .menu__list {
   @include media-laptop {
     transform: translateX(0%);
+    background-color: #0C0C0E;
   }
 }
 
@@ -39,8 +40,8 @@
 
   @include media-laptop {
     order: 3;
-    margin-right: -6px;
-    margin-left: 34px;
+    margin-right: -4px;
+    margin-left: 44px;
   }
 }
 
