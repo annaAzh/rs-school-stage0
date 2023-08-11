@@ -66,9 +66,13 @@
 .contacts__tel {
   transition: all 0.3s;
 
-  &:hover {
-    color: $color-accent;
+  @media (hover: hover) {
+    &:hover {
+      color: $color-accent;
+    }
   }
+
+
 }
 
 .contacts__mails {
@@ -97,9 +101,12 @@
   @extend %inter-700;
   transition: all 0.3s;
 
-  &:hover {
-    color: $color-accent;
+  @media (hover: hover) {
+    &:hover {
+      color: $color-accent;
+    }
   }
+
 }
 
 .contacts__img {

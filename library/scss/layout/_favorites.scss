@@ -215,10 +215,13 @@
   cursor: pointer;
   transition: all 0.3s ease-in;
 
-  &:hover {
-    background-color: $color-accent;
-    border-color: $color-accent;
+  @media (hover: hover) {
+    &:hover {
+      background-color: $color-accent;
+      border-color: $color-accent;
+    }
   }
+
 
   @include media-mobileLarge {
     order: 6;
