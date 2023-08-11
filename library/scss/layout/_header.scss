@@ -96,12 +96,16 @@
     width: 0%;
   }
 
-  &:hover {
-    color: $color-accent;
+  @media (hover: hover) {
+    &:hover {
+      color: $color-accent;
+    }
   }
 
-  &:hover::before {
-    width: 100%;
+  @media (hover: hover) {
+    &:hover::before {
+      width: 100%;
+    }
   }
 }
 
@@ -109,9 +113,12 @@
   opacity: 1;
   transition: all 0.3s ease-in;
 
-  &:hover {
-    opacity: 0.7;
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
   }
+
 
   @include media-laptop {
     margin-left: auto;

@@ -7,8 +7,10 @@
   content: '';
   transition: all 0.3s ease-in;
 
-  &:hover {
-    background-color: $color-accent;
+  @media (hover: hover) {
+    &:hover {
+      background-color: $color-accent;
+    }
   }
 }
 
@@ -39,8 +41,10 @@
       left: 0;
   }
 
-  &:hover .burger__line {
-    background-color: $color-accent;
+  @media (hover: hover) {
+    &:hover .burger__line {
+      background-color: $color-accent;
+    }
   }
 }
 

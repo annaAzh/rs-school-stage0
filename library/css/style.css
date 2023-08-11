@@ -149,8 +149,10 @@ body {
   content: "";
   transition: all 0.3s ease-in;
 }
-.burger__line:hover, .burger:hover::after, .burger:hover::before {
-  background-color: #BB945F;
+@media (hover: hover) {
+  .burger__line:hover, .burger:hover::after, .burger:hover::before {
+    background-color: #BB945F;
+  }
 }
 
 .burger {
@@ -177,8 +179,10 @@ body {
   bottom: 0;
   left: 0;
 }
-.burger:hover .burger__line {
-  background-color: #BB945F;
+@media (hover: hover) {
+  .burger:hover .burger__line {
+    background-color: #BB945F;
+  }
 }
 
 .burger__line {
@@ -381,19 +385,25 @@ body {
   background-color: #BB945F;
   width: 0%;
 }
-.menu__link:hover {
-  color: #BB945F;
+@media (hover: hover) {
+  .menu__link:hover {
+    color: #BB945F;
+  }
 }
-.menu__link:hover::before {
-  width: 100%;
+@media (hover: hover) {
+  .menu__link:hover::before {
+    width: 100%;
+  }
 }
 
 .user-nav {
   opacity: 1;
   transition: all 0.3s ease-in;
 }
-.user-nav:hover {
-  opacity: 0.7;
+@media (hover: hover) {
+  .user-nav:hover {
+    opacity: 0.7;
+  }
 }
 @media (max-width: 1020px) {
   .user-nav {
@@ -564,8 +574,10 @@ body {
   height: auto;
   object-fit: cover;
 }
-.arrow:hover {
-  opacity: 0.7;
+@media (hover: hover) {
+  .arrow:hover {
+    opacity: 0.7;
+  }
 }
 @media (max-width: 768px) {
   .arrow {
@@ -851,9 +863,11 @@ body {
   cursor: pointer;
   transition: all 0.3s ease-in;
 }
-.tab-item__btn:hover {
-  background-color: #BB945F;
-  border-color: #BB945F;
+@media (hover: hover) {
+  .tab-item__btn:hover {
+    background-color: #BB945F;
+    border-color: #BB945F;
+  }
 }
 @media (max-width: 624px) {
   .tab-item__btn {
@@ -1105,8 +1119,10 @@ body {
 .contacts__tel {
   transition: all 0.3s;
 }
-.contacts__tel:hover {
-  color: #BB945F;
+@media (hover: hover) {
+  .contacts__tel:hover {
+    color: #BB945F;
+  }
 }
 
 .contacts__mails {
@@ -1135,8 +1151,10 @@ body {
 .contacts__email {
   transition: all 0.3s;
 }
-.contacts__email:hover {
-  color: #BB945F;
+@media (hover: hover) {
+  .contacts__email:hover {
+    color: #BB945F;
+  }
 }
 
 .contacts__img {
@@ -1278,9 +1296,11 @@ body {
   cursor: pointer;
   transition: all 0.3s ease-in;
 }
-.holder__btn:hover {
-  background-color: #BB945F;
-  border-color: #BB945F;
+@media (hover: hover) {
+  .holder__btn:hover {
+    background-color: #BB945F;
+    border-color: #BB945F;
+  }
 }
 
 .card__right-subtitle {
@@ -1336,9 +1356,11 @@ body {
 .card__auth + .card__auth {
   margin-left: 14px;
 }
-.card__auth:hover {
-  background-color: #BB945F;
-  border-color: #BB945F;
+@media (hover: hover) {
+  .card__auth:hover {
+    background-color: #BB945F;
+    border-color: #BB945F;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
