@@ -16,6 +16,7 @@
 .header-top.header-top--active .menu__list {
   @include media-laptop {
     transform: translateX(0%);
+    background-color: #0C0C0E;
   }
 }
 
@@ -29,6 +30,7 @@
   @include media-mobile {
     width: 100vw;
     margin-bottom: 20px;
+    font-size: 26px;
   }
 }
 
@@ -38,8 +40,8 @@
 
   @include media-laptop {
     order: 3;
-    margin-right: 0;
-    margin-left: 40px;
+    margin-right: -4px;
+    margin-left: 44px;
   }
 }
 
@@ -71,6 +73,7 @@
 
   @include media-laptop {
     padding-left: 0;
+    padding-top: 3px;
   }
 }
 
