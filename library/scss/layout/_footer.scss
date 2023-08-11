@@ -11,6 +11,9 @@
   border-bottom: 1px solid $color-white;
   line-height: 20px;
   letter-spacing: normal;
+  @include media-tablet {
+    padding-bottom: 28px;
+  }
 }
 
 .footer__address {
@@ -57,27 +60,4 @@
     font-size: 18px;
   }
 
-  // @include media-laptop {
-  //   justify-content: space-between;
-  // }
 }
-
-// .footer__year {
-//   margin-right: 494px;
-
-//   @include media-laptop {
-//     margin-right: 0;
-//   }
-// }
-// .footer__school-link {
-//   margin-right: 100px;
-//   @include media-laptop {
-//     margin-right: 0;
-//   }
-// }
-// .footer__user-link {
-//   margin-left: auto;
-//   @include media-laptop {
-//     margin-left: 0;
-//   }
-// }

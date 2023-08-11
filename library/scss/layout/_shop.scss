@@ -6,6 +6,12 @@
   text-align-last: center;
   padding: 0 17px;
 
+  @include media-tablet {
+    text-align: center;
+    letter-spacing: 1.90px;
+    padding: 0;
+  }
+
   @include media-mobile {
     font-size: 16px;
     line-height: 30px;
