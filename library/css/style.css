@@ -546,6 +546,10 @@ body {
   background-color: #BB945F;
 }
 
+.slider__dot-laptop {
+  display: none;
+}
+
 .arrow {
   display: none;
   width: 24px;
