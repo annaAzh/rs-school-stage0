@@ -10,6 +10,11 @@ body {
     color: $color-primary;
     overflow-x: hidden;
 }
+.wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
 
 .container {
     max-width: 1440px;
