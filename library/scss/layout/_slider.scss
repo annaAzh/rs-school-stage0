@@ -30,6 +30,11 @@
   grid-auto-flow: column;
   grid-auto-columns: calc((100% / 3) - 16px);
   column-gap: 25px;
+  /* начальная позиция для слайдера */
+  left: 0;
+  position: relative;
+  /* анимация движения карточки */
+  transition: all 0.5s ease-in-out;
 
   @include media-laptop {
     grid-auto-columns: calc(100% / 2);
@@ -40,9 +45,11 @@
     margin-bottom: 19px;
   }
 }
+
 .slider__item {
   max-width: 450px;
 }
+
 .slider__item-img {
   width: 100%;
   height: auto;
@@ -82,16 +89,13 @@
   }
 }
 
-.slider__dot-laptop {
-  display: none;
-}
-
-
 .arrow {
   display: none;
-  width: 24px;
+  min-width: 24px;
   height: 24px;
   transform: translateY(-10%);
+  border: none;
+  background-color: transparent;
   cursor: pointer;
   opacity: 1;
   transition: all 0.3s;
@@ -102,13 +106,17 @@
     object-fit: cover;
   }
 
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.3;
+  }
 
   @media (hover: hover) {
     &:hover {
       opacity: 0.7;
+      transform: scale(1.5);
     }
   }
-
 
   @include media-tablet {
     display: block;

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .card__subtitle, .label__name, .popup-auth__link, body {
   font-family: "Inter", sans-serif;
   font-weight: 400;
@@ -509,6 +510,11 @@ body {
   grid-auto-flow: column;
   grid-auto-columns: calc(33.3333333333% - 16px);
   column-gap: 25px;
+  /* начальная позиция для слайдера */
+  left: 0;
+  position: relative;
+  /* анимация движения карточки */
+  transition: all 0.5s ease-in-out;
 }
 @media (max-width: 1020px) {
   .slider {
@@ -562,15 +568,13 @@ body {
   background-color: #BB945F;
 }
 
-.slider__dot-laptop {
-  display: none;
-}
-
 .arrow {
   display: none;
-  width: 24px;
+  min-width: 24px;
   height: 24px;
   transform: translateY(-10%);
+  border: none;
+  background-color: transparent;
   cursor: pointer;
   opacity: 1;
   transition: all 0.3s;
@@ -580,9 +584,14 @@ body {
   height: auto;
   object-fit: cover;
 }
+.arrow:disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
 @media (hover: hover) {
   .arrow:hover {
     opacity: 0.7;
+    transform: scale(1.5);
   }
 }
 @media (max-width: 768px) {
