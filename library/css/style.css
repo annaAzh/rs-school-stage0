@@ -103,7 +103,6 @@ body {
 }
 
 .wrapper {
-  overflow: hidden;
   width: 100%;
   position: relative;
 }
@@ -145,6 +144,24 @@ body {
 
 .noscroll {
   overflow: hidden;
+}
+
+.hide {
+  display: none;
+}
+
+.show-tab {
+  display: grid;
+}
+
+.sticky {
+  position: sticky;
+  z-index: 120;
+  width: 100%;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in;
 }
 
 .burger__line, .burger::after, .burger::before {
@@ -234,7 +251,7 @@ body {
 }
 
 .popup-auth {
-  display: none;
+  display: block;
   position: fixed;
   left: 0;
   right: 0;
@@ -242,14 +259,28 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
   min-height: 100vh;
   width: 100%;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in;
 }
 
 .popup-auth__inner {
   position: absolute;
-  top: 80px;
   right: 20px;
   background-color: #FFFFFF;
   z-index: 15;
+  transform: scale(0);
+  transition: transform 0.4s ease-in;
+}
+
+.popup-auth.user-nav--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-auth.user-nav--active .popup-auth__inner {
+  transform: scale(1);
 }
 
 .popup-auth__content {
@@ -282,15 +313,32 @@ body {
   letter-spacing: normal;
   font-size: 15px;
   line-height: 20px;
+  transition: all 0.3s ease-in;
 }
 .popup-auth__link + .popup-auth__link {
   margin-top: 10px;
+}
+.popup-auth__link:hover {
+  color: #BB945F;
 }
 
 .popup-profile {
   display: none;
 }
 
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .header {
   background-color: #0C0C0E;
   padding: 20px 0;
@@ -669,6 +717,16 @@ body {
   border: none;
   margin: 0;
   padding: 0;
+  transition: all 0.3s ease-in;
+}
+.fieldset.sticky {
+  padding-left: 20px;
+}
+.fieldset.sticky .legend {
+  padding-top: 20px;
+}
+.fieldset.sticky .inputs__box {
+  margin-bottom: 10px;
 }
 
 .legend {
@@ -689,10 +747,9 @@ body {
   gap: 0 60px;
   margin-bottom: 29px;
 }
-
 @media screen and (max-width: 730px) {
-  .input__box {
-    grid-column: span 4;
+  .inputs__box {
+    gap: 0 10px;
   }
 }
 
@@ -909,12 +966,6 @@ body {
   width: 100%;
   height: auto;
   object-fit: cover;
-}
-
-#spring-tab,
-#summer-tab,
-#autumn-tab {
-  display: none;
 }
 
 .tab-item__btn.tab-item__btn--disabled {

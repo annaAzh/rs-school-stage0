@@ -1,5 +1,5 @@
 .popup-auth {
-  display: none;
+  display: block;
   position: fixed;
   left: 0;
   right: 0;
@@ -7,22 +7,32 @@
   background-color: rgba($color: $color-primary, $alpha: 0.3);
   min-height: 100vh;
   width: 100%;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in;
 }
 
 .popup-auth__inner {
-  // width: 80px;
-  // height: 115px;
   position: absolute;
-  top: 80px;
   right: 20px;
   background-color: $color-white;
   z-index: 15;
+
+  transform: scale(0);
+  transition: transform 0.4s ease-in;
+}
+.popup-auth.user-nav--active {
+  opacity: 1;
+  visibility: visible;
+}
+.popup-auth.user-nav--active .popup-auth__inner{
+  transform: scale(1);
 }
 
 .popup-auth__content {
   padding: 5px 10px 20px;
-  text-align: center;
-  
+  text-align: center; 
 }
 
 .popup-auth__title {
@@ -53,9 +63,14 @@
   @extend %inter-400;
   font-size: 15px;
   line-height: 20px;
+  transition: all 0.3s ease-in;
 
   &+.popup-auth__link {
     margin-top: 10px;
+  }
+
+  &:hover {
+    color: $color-accent;
   }
 }
 

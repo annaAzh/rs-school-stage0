@@ -1,6 +1,9 @@
 import burger from "./burger.js";
 import changeDots from "./dots.js";
 import slider from "./slider.js";
+import setTabs from "./tabs.js";
+import stickyTab from "./stickyTab.js";
+import authRender from "./auth.js";
 
 window.addEventListener('resize', () => {
   window.location.reload();
@@ -13,6 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
   burger();
   changeDots();
   slider();
+  setTabs();
+  stickyTab();
+  authRender();
 });
 
 

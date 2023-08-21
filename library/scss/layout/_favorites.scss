@@ -2,6 +2,18 @@
   border: none;
   margin: 0;
   padding: 0;
+  transition: all 0.3s ease-in;
+  &.sticky {
+    padding-left: 20px;
+
+    .legend {
+        padding-top: 20px;
+    }
+
+    .inputs__box {
+      margin-bottom: 10px;
+    }
+  }
 }
 
 .legend {
@@ -22,13 +34,17 @@
   max-width: 720px;
   gap: 0 60px;
   margin-bottom: 29px;
-}
 
-.input__box {
-  @media screen and (max-width: 730px) {
-    grid-column: span 4;
+    @media screen and (max-width: 730px) {
+      gap: 0 10px;
   }
 }
+
+// .input__box {
+  // @media screen and (max-width: 730px) {
+  //   grid-column: span 4;
+  // }
+// }
 
 .label {
   padding: 5px;
@@ -248,11 +264,11 @@
   object-fit: cover;
 }
 
-#spring-tab,
-#summer-tab,
-#autumn-tab {
-  display: none;
-}
+// #spring-tab,
+// #summer-tab,
+// #autumn-tab {
+//   display: none;
+// }
 
 .tab-item__btn.tab-item__btn--disabled {
   color: $color-accent;
