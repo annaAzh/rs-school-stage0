@@ -4,11 +4,17 @@ const burger = () => {
   const header = document.querySelector('.header-top');
   const menuLink = document.querySelectorAll('.menu__link');
   const overlay = document.querySelector('.overlay');
+  const popup = document.querySelectorAll('[data-modal]');
 
   btn.addEventListener('click', () => {
     header.classList.toggle('header-top--active');
     document.body.classList.toggle('noscroll');
     btn.classList.toggle('burger--active');
+
+    popup.forEach(elem => {
+      elem.classList.remove('user-nav--active');
+    });
+
     if (header.matches('.header-top--active')) {
       overlay.classList.add('shown');
       overlay.classList.remove('hide');

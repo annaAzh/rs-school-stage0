@@ -593,7 +593,7 @@
       </div>
     </footer>
     <div class="overlay hide"></div>
-    <div class="popup-auth hide">
+    <div class="popup-auth" data-modal>
         <div class="popup-auth__inner">
           <div class="popup-auth__content">
             <h5 class="popup-auth__title">Profile</h5>
@@ -602,7 +602,7 @@
           </div>
       </div>
     </div>
-    <div class="popup-login">
+    <div class="popup-login hide" data-modal>
       <div class="popup-login__inner">
         <div class="popup-login__close">
           <img class="popup-login__close-img" src="assets/icons/close.svg" alt="close button">
@@ -621,6 +621,35 @@
           <div class="popup-login__register-box">
             <div class="popup-login__question">Don't have an account?</div>
             <a href="#" class="popup-login__link">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-register hide" data-modal>
+      <div class="popup-register__inner">
+        <div class="popup-register__close">
+          <img class="popup-register__close-img" src="assets/icons/close.svg" alt="close button">
+        </div>
+        <div class="popup-register__content">
+          <div class="popup-register__title">Register</div>
+          <form action="#" class="popup-register__form">
+            <label class="popup-register__label">First name
+              <input type="text" class="popup-login__input">
+            </label>
+            <label class="popup-register__label">Last name
+              <input type="text" class="popup-login__input">
+            </label>
+            <label class="popup-register__label">E-mail
+              <input type="text" class="popup-login__input">
+            </label>
+            <label class="popup-register__label">Password
+              <input type="text" class="popup-login__input">
+            </label>
+            <button class="popup-register__btn" type="submit">Sign Up</button>
+          </form>
+          <div class="popup-register__register-box">
+            <div class="popup-register__question">Already have an account?</div>
+            <a href="#" class="popup-register__link">Login</a>
           </div>
         </div>
       </div>

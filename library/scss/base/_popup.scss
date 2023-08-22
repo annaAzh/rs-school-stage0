@@ -86,7 +86,7 @@
 /*--------popup-login------------*/
 
 %popup-overlay {
-  display: block;
+  // display: block;
   position: fixed;
   left: 0;
   right: 0;
@@ -171,6 +171,7 @@
   height: 20px;
   width: 100%;
   margin-top: 10px;
+  outline-color: $color-title;
 }
 
 %popup-btn {
@@ -223,47 +224,58 @@
 
 /*---------------------------*/
 
-.popup-login {
+.popup-login,
+.popup-register {
   @extend %popup-overlay;
 }
 
-.popup-login__inner {
+.popup-login__inner,
+.popup-register__inner {
   @extend %popup-inner;
 }
 
-.popup-login__close {
+.popup-login__close,
+.popup-register__close {
   @extend %popup-close;
 }
 
-.popup-login__content {
+.popup-login__content,
+.popup-register__content {
   @extend %popup-content;
 }
 
-.popup-login__label {
+.popup-login__label,
+.popup-register__label {
   @extend %popup-label;
 }
 
+.popup-register__input,
 .popup-login__input {
   @extend %popup-input;
 }
 
+.popup-register__btn,
 .popup-login__btn {
   @extend %popup-btn;
 }
-.popup-login__register-box {
+.popup-login__register-box,
+.popup-register__register-box {
   display: flex;
   align-items: center;
   text-align: left;
 }
-.popup-login__question {
+.popup-login__question,
+.popup-register__question {
     @extend %popup-question;
 }
 
-.popup-login__link {
+.popup-login__link,
+.popup-register__link {
   @extend %popup-link;
 }
 
-.popup-login__title {
+.popup-login__title,
+.popup-register__title {
   @extend %popup-title;
 }
 

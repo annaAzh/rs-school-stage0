@@ -18,12 +18,6 @@ const authRender = () => {
 
   trigger.addEventListener('click', () => {
     openAuth();
-    
-    if (document.querySelector('.header-top').classList.contains('header-top--active')) {
-      closeAuth()
-    } else {
-      return;
-    }
   });
 
   authOverlay.addEventListener('click', (e) => {
