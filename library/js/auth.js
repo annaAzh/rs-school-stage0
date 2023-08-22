@@ -4,6 +4,7 @@ const authRender = () => {
   const authPopup = document.querySelector('.popup-auth__inner');
 
   const bottomPoint = trigger.getBoundingClientRect().bottom;
+  console.log(bottomPoint);
   const widthPopup = authPopup.getBoundingClientRect().width;
   const rightPoint = document.body.clientWidth - trigger.getBoundingClientRect().right;
 
@@ -16,14 +17,31 @@ const authRender = () => {
   }
 
   trigger.addEventListener('click', () => {
-    authOverlay.classList.add('user-nav--active');
+    openAuth();
+    
+    if (document.querySelector('.header-top').classList.contains('header-top--active')) {
+      closeAuth()
+    } else {
+      return;
+    }
   });
 
   authOverlay.addEventListener('click', (e) => {
     if (e.target.classList.contains('popup-auth')) {
-      authOverlay.classList.remove('user-nav--active');
+      closeAuth();
     }
   });
+
+  function openAuth() {
+    authOverlay.classList.add('user-nav--active');
+    document.body.classList.toggle('noscroll');
+  }
+
+  function closeAuth() {
+    authOverlay.classList.remove('user-nav--active');
+    document.body.classList.remove('noscroll');
+  }
+ 
 };
 
 export default authRender;

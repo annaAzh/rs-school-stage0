@@ -9,7 +9,7 @@
   font-weight: 700;
 }
 
-.card__right-subtitle, .holder__input::placeholder, .holder__input, .holder__title, .menu-shop__item-price, .menu-shop__title, .tab-item__span, .welcome__title, .header__title, .title {
+.card__right-subtitle, .holder__input::placeholder, .holder__input, .holder__title, .menu-shop__item-price, .menu-shop__title, .tab-item__span, .welcome__title, .header__title, .popup-login__title, .title {
   font-family: "Forum", cursive;
   font-weight: 400;
 }
@@ -260,6 +260,7 @@ body {
   min-height: 100vh;
   width: 100%;
   overflow-y: auto;
+  z-index: 99;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease-in;
@@ -324,6 +325,138 @@ body {
 
 .popup-profile {
   display: none;
+}
+
+/*--------popup-login------------*/
+.popup-login {
+  display: block;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  min-height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+  z-index: 99;
+  transition: all 0.3s ease-in;
+}
+
+.popup-login__inner {
+  width: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFFFFF;
+  z-index: 15;
+  padding: 20px 25px;
+  transition: transform 0.4s ease-in;
+}
+
+.popup-login__title {
+  color: #000000;
+  text-align: center;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.popup-login__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 15px;
+  height: 15px;
+  opacity: 1;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+.popup-login__close:hover {
+  opacity: 0.5;
+}
+
+.popup-login__close-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.popup-login__content {
+  position: relative;
+}
+
+.popup-login__label {
+  display: block;
+  color: #000000;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 133.333%;
+  letter-spacing: 0.3px;
+  margin-bottom: 10px;
+}
+
+.popup-login__input {
+  border: 1px solid #BB945F;
+  padding: 5px 10px;
+  height: 20px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.popup-login__btn {
+  border-radius: 2px;
+  border: 1px solid #0C0C0E;
+  width: 75px;
+  height: 30px;
+  color: #0C0C0E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+.popup-login__btn:hover {
+  background-color: #BB945F;
+  border-color: #BB945F;
+}
+
+.popup-login__question {
+  color: #000000;
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  margin-right: 10px;
+  letter-spacing: 0;
+}
+
+.popup-login__link {
+  color: #0C0C0E;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 12px;
+  letter-spacing: 1px;
+  text-decoration-line: underline;
+  transition: all 0.3s ease-in;
+}
+.popup-login__link:hover {
+  color: #BB945F;
+}
+
+/*---------------------------*/
+.popup-login__register-box {
+  display: flex;
+  align-items: center;
+  text-align: left;
 }
 
 .fade {
