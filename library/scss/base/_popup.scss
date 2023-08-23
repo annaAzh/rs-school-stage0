@@ -60,7 +60,7 @@
   }
 }
 
-.popup-auth__link {
+.popup-auth__link-login {
   display: block;
   letter-spacing: normal;
   @extend %inter-400;
@@ -68,7 +68,24 @@
   line-height: 20px;
   transition: all 0.3s ease-in;
 
-  &+.popup-auth__link {
+  &+.popup-auth__link-login {
+    margin-top: 10px;
+  }
+
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+.popup-auth__link-login-register {
+  display: block;
+  letter-spacing: normal;
+  @extend %inter-400;
+  font-size: 15px;
+  line-height: 20px;
+  transition: all 0.3s ease-in;
+
+  &+.popup-auth__link-register {
     margin-top: 10px;
   }
 
@@ -96,8 +113,8 @@
   width: 100%;
   overflow-y: auto;
   z-index: 99;
-  // opacity: 0;
-  // visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
   transition: all 0.3s ease-in;
 }
 
@@ -106,11 +123,10 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
   background-color: $color-white;
   z-index: 15;
   padding: 20px 25px;
-  // transform: scale(0);
   transition: transform 0.4s ease-in;
 }
 
@@ -223,7 +239,22 @@
 
 
 /*---------------------------*/
+.popup-register.popup--active {
+  opacity: 1;
+  visibility: visible;
+}
 
+.popup-register.popup--active .popup-register__inner {
+  transform: translate(-50%, -50%) scale(1);
+}
+.popup-login.popup--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-login.popup--active .popup-login__inner {
+  transform: translate(-50%, -50%) scale(1);
+}
 .popup-login,
 .popup-register {
   @extend %popup-overlay;

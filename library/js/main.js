@@ -3,7 +3,8 @@ import changeDots from "./dots.js";
 import slider from "./slider.js";
 import setTabs from "./tabs.js";
 import stickyTab from "./stickyTab.js";
-import authRender from "./auth.js";
+import userMenu from "./userMenu.js";
+import modals from "./auth.js";
 
 window.addEventListener('resize', () => {
   window.location.reload();
@@ -18,7 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
   slider();
   setTabs();
   stickyTab();
-  authRender();
+  userMenu();
+    modals('.user-nav', '.popup-auth', '.popup-auth', 'user-nav--active');
+    modals('.popup-auth__link-login', '.popup-login', '.popup-login__close', 'popup--active');
+    
+    modals('.popup-auth__link-register', '.popup-register', '.popup-register__close', 'popup--active');
+    modals('.popup-login__link', '.popup-register', '.popup-register__close', 'popup--active');
+    modals('.popup-register__link', '.popup-login', '.popup-login__close', 'popup--active');
 });
 
 

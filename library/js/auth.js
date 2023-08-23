@@ -1,41 +1,35 @@
-const authRender = () => {
-  const trigger = document.querySelector('.user-nav');
-  const authOverlay = document.querySelector('.popup-auth');
-  const authPopup = document.querySelector('.popup-auth__inner');
+const modals = (triggerSelector, modalSelector, closeSelector, active) => {
+  const trigger = document.querySelector(triggerSelector);
+  const modal = document.querySelector(modalSelector);
+  const close = document.querySelector(closeSelector);
+  const popups = document.querySelectorAll('[data-modal]');
 
-  const bottomPoint = trigger.getBoundingClientRect().bottom;
-  console.log(bottomPoint);
-  const widthPopup = authPopup.getBoundingClientRect().width;
-  const rightPoint = document.body.clientWidth - trigger.getBoundingClientRect().right;
-
-  authPopup.style.top = bottomPoint + 1 + 'px';
-  
-  if (document.body.clientWidth  <= 484) {
-   authPopup.style.right = rightPoint - widthPopup + trigger.getBoundingClientRect().width + 'px';
-  } else {
-    authPopup.style.right = rightPoint + 'px';
-  }
-
-  trigger.addEventListener('click', () => {
-    openAuth();
-  });
-
-  authOverlay.addEventListener('click', (e) => {
-    if (e.target.classList.contains('popup-auth')) {
-      closeAuth();
+  trigger.addEventListener('click', (e) => {
+    if (e.target) {
+      e.preventDefault();
     }
+    popups.forEach(elem => {
+      elem.classList.remove(active);
+      document.body.classList.remove('noscroll');
+    })
+
+
+    modal.classList.add(active);
+    document.body.classList.add('noscroll');
+  });
+  
+  close.addEventListener('click', () => {
+    modal.classList.remove(active);
+    document.body.classList.remove('noscroll');
   });
 
-  function openAuth() {
-    authOverlay.classList.add('user-nav--active');
-    document.body.classList.toggle('noscroll');
-  }
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove(active);
+      document.body.classList.remove('noscroll');
+    }
+  })
 
-  function closeAuth() {
-    authOverlay.classList.remove('user-nav--active');
-    document.body.classList.remove('noscroll');
-  }
- 
 };
 
-export default authRender;
+export default modals;
