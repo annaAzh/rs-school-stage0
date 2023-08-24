@@ -5,6 +5,8 @@ import setTabs from "./tabs.js";
 import stickyTab from "./stickyTab.js";
 import userMenu from "./userMenu.js";
 import modals from "./auth.js";
+import validation from "./validation.js";
+import userIsRegitred from "./userIsRegitred.js";
 
 window.addEventListener('resize', () => {
   window.location.reload();
@@ -26,6 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
     modals('.popup-auth__link-register', '.popup-register', '.popup-register__close', 'popup--active');
     modals('.popup-login__link', '.popup-register', '.popup-register__close', 'popup--active');
     modals('.popup-register__link', '.popup-login', '.popup-login__close', 'popup--active');
+    validation('.popup-login__form');
+    validation('.popup-register__form');
+    try {
+      userIsRegitred();
+    } catch(e){}
+    
 });
 
 

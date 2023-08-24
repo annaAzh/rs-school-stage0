@@ -611,10 +611,10 @@
           <div class="popup-login__title">Login</div>
           <form action="#" class="popup-login__form">
             <label class="popup-login__label">E-mail or readers card
-              <input type="text" class="popup-login__input">
+              <input type="text" class="popup-login__input" data-login="true">
             </label>
             <label class="popup-login__label">Password
-              <input type="text" class="popup-login__input">
+              <input type="text" class="popup-login__input" data-maxlength="8">
             </label>
             <button class="popup-login__btn" type="submit">Log In</button>
           </form>
@@ -634,16 +634,16 @@
           <div class="popup-register__title">Register</div>
           <form action="#" class="popup-register__form">
             <label class="popup-register__label">First name
-              <input type="text" class="popup-login__input">
+              <input type="text" class="popup-login__input" id="name">
             </label>
             <label class="popup-register__label">Last name
-              <input type="text" class="popup-login__input">
+              <input type="text" class="popup-login__input" id="surname">
             </label>
             <label class="popup-register__label">E-mail
-              <input type="text" class="popup-login__input">
+              <input type="text" class="popup-login__input" data-email="true" id="email">
             </label>
             <label class="popup-register__label">Password
-              <input type="text" class="popup-login__input">
+              <input type="text" class="popup-login__input" data-maxlength="8" id="password">
             </label>
             <button class="popup-register__btn" type="submit">Sign Up</button>
           </form>

@@ -508,6 +508,10 @@ body {
   text-align: left;
 }
 
+input._error {
+  box-shadow: 0 0 7px rgb(239, 97, 97);
+}
+
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
