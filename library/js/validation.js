@@ -1,3 +1,5 @@
+import userID from "./userID.js";
+
 const validation = (formSelector) => {
 
   const form = document.querySelector(formSelector);
@@ -10,15 +12,18 @@ const validation = (formSelector) => {
     const lastName = form.querySelector('#surname');
     const email = form.querySelector('#email');
     const password = form.querySelector('#password');
-    setLocalStorage(firstName, lastName, email, password);
+    const userId = userID();
+    setLocalStorage(firstName, lastName, email, password, userId);
 
     setTimeout(cleanForm, 1000); 
   });
+
 
   function cleanForm() {
     form.reset();
     form.parentNode.parentNode.parentNode.classList.remove('popup--active');
     document.body.classList.remove('noscroll');
+    location.reload();
   }
 
   function setValidation(currentForm) {
@@ -70,29 +75,21 @@ const validation = (formSelector) => {
   input.classList.remove('_error');
   }
 
-  function setLocalStorage(firstName, lastName, email, password) {
-    console.log(firstName, lastName, email, password);
-    // localStorage.setItem('login', firstName.value);
-    // localStorage.setItem('lastName', lastName.value);
-    // localStorage.setItem('email', email.value);
-    // localStorage.setItem('password', password.value);
 
+  function setLocalStorage(firstName, lastName, email, password, userId) {
     let user = {
       isRegistred: 'true',
       isLogin: 'true',
       login: firstName.value,
       lastName: lastName.value,
       email: email.value,
-      password: password.value
+      password: password.value,
+      userID: userId
     };
-    // console.log(user);
+
     const userObj = JSON.stringify(user);
-// console.log(userObj);
+
     localStorage.setItem('newLibraryUser', userObj);
-
-
-    // let key = JSON.parse(localStorage.getItem('newLibraryUser'));
-    // console.log(key)
   }
 
 

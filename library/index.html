@@ -337,10 +337,10 @@
                     <img class="tab-item__img" src="assets/images/summer/4.jpg" alt="Shark Dialogues: A Novel">
                   </div>
                 </div>
-  
+
               </div>
               <div class="tab__items" id="autumn-tab">
-  
+
                 <div class="tab__item tab-item">
                   <span class="tab-item__span">Staff Picks</span>
                   <h3 class="tab-item__title">
@@ -594,12 +594,12 @@
     </footer>
     <div class="overlay hide"></div>
     <div class="popup-auth" data-modal>
-        <div class="popup-auth__inner">
-          <div class="popup-auth__content">
-            <h5 class="popup-auth__title">Profile</h5>
-            <a class="popup-auth__link-login" href="#">Log In</a>
-            <a class="popup-auth__link-register" href="#">Register</a>
-          </div>
+      <div class="popup-auth__inner">
+        <div class="popup-auth__content">
+          <h5 class="popup-auth__title">Profile</h5>
+          <a class="popup-auth__link-login" href="#">Log In</a>
+          <a class="popup-auth__link-register" href="#">Register</a>
+        </div>
       </div>
     </div>
     <div class="popup-login" data-modal>
@@ -654,58 +654,65 @@
         </div>
       </div>
     </div>
-    <div class="popup-profile">
-      <div class="popup-profile__inner">
-        <div class="popup-profile__content">
-          <span class="popup-profile__close"></span>
-          <div class="popup-profile__column">
-            <img class="popup-profile__img" src="assets/images/avatar.jpg" alt="JD">
-            <p class="popup-profile__name">John Doe</p>
+  </div>
+  <div class="popup-buy popup--active ">
+    <div class="popup-buy__inner">
+      <div class="popup-buy__content">
+        <div class="popup-buy__close">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 16.8507L17 2" stroke="white" stroke-width="3"/>
+            <path d="M2 2.14929L17 17" stroke="white" stroke-width="3"/>
+            </svg>            
+        </div>
+        <div class="popup-buy__title-box">
+          <h3 class="popup-buy__title">Buy a library card</h3>
+        </div>
+        <div class="popup-buy__columns">
+          <div class="popup-buy__column">
+            <form action="#" class="popup-buy__form">
+              <label class="popup-buy__label">FBank card number
+                <input type="text" class="popup-buy__input" id="card-number">
+              </label>
+              <label class="popup-buy__label">Expiration code
+                <div class="popup-buy__inputs-box">
+                  <input type="text" class="popup-buy__input" id="exp1">
+                  <input type="text" class="popup-buy__input" id="exp2">
+                </div>
+              </label>
+              <label class="popup-buy__label">CVC
+                <input type="text" class="popup-buy__input" id="cvc">
+              </label>
+              <label class="popup-buy__label">Cardholder name
+                <input type="text" class="popup-buy__input" id="cardholder-name">
+              </label>
+              <label class="popup-buy__label">Postal code
+                <input type="text" class="popup-buy__input" id="postal">
+              </label>
+              <label class="popup-buy__label">City / Town
+                <input type="text" class="popup-buy__input" id="town">
+              </label>
+              <div class="popup-buy__btn-box">
+                <button class="popup-buy__btn" type="submit">Buy</button>
+                <div class="popup-buy__price">
+                  $ <span>25.00</span>
+                </div>
+              </div>
+
+            </form>
           </div>
-          <div class="popup-profile__column">
-            <h3 class="popup-profile__title">My profile</h3>
-            <div class="popup-profile__stat">
-              <div class="popup-profile__visits">
-                <span>Visits</span>
-                <img src="assets/icons/visits.svg" alt="visits">
-                <span id="visits">23</span>
-              </div>
-              <div class="popup-profile__bonuses">
-                <span>Bonuses</span>
-                <img src="assets/icons/bonuses.svg" alt="bonuses">
-                <span id="bonuses">1240</span>
-              </div>
-              <div class="popup-profile__books">
-                <span>Books</span>
-                <img src="assets/icons/book.svg" alt="books">
-                <span id="books">23</span>
-              </div>
-            </div>
-            <h5 class="popup-profile__subtitle">Rented books</h5>
-            <ul class="popup-profile__list">
-              <li class="popup-profile__item">
-                <a class="popup-profile__link" href="#">
-                  The Last Queen, Clive Irving
-                </a>
-              </li>
-              <li class="popup-profile__item">
-                <a class="popup-profile__link" href="#">
-                  Dominicana, Angie Cruz
-                </a>
-              </li>
-            </ul>
-            <div class="popup-profile__card">
-              Card number
-              <span>F00234030</span>
-              <button class="popup-profile__copy">
-                <img class="popup-profile__copy-img" src="assets/icons/copy.svg" alt="copy image">
-              </button>
-            </div>
+          <div class="popup-buy__column">
+            <p class="popup-buy__desc">
+              If you are live, work, attend school, or pay property taxes in New York State, you can get a $25 digital
+              library card right now using this online form. Visitors to New York State can also use this form to apply
+              for a temporary card.
+            </p>
           </div>
-  
         </div>
       </div>
     </div>
+  </div>
+
+
   </div>
 
   <script src="js/main.js" type="module"></script>

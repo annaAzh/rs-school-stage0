@@ -94,16 +94,10 @@
   }
 }
 
-.popup-profile {
-  display: none;
-}
-
-
 
 /*--------popup-login------------*/
 
 %popup-overlay {
-  // display: block;
   position: fixed;
   left: 0;
   right: 0;
@@ -112,7 +106,7 @@
   min-height: 100vh;
   width: 100%;
   overflow-y: auto;
-  z-index: 99;
+  z-index: 100;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease-in;
@@ -125,7 +119,7 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
   background-color: $color-white;
-  z-index: 15;
+  z-index: 115;
   padding: 20px 25px;
   transition: transform 0.4s ease-in;
 }
@@ -148,6 +142,7 @@
   width: 15px;
   height: 15px;
   opacity: 1;
+  z-index: 116;
   cursor: pointer;
   transition: all 0.3s ease-in;
 
@@ -255,8 +250,18 @@
 .popup-login.popup--active .popup-login__inner {
   transform: translate(-50%, -50%) scale(1);
 }
+
+.popup-profile.popup--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-profile.popup--active .popup-profile__inner {
+  transform: translate(-50%, -50%) scale(1);
+}
 .popup-login,
-.popup-register {
+.popup-register,
+.popup-profile {
   @extend %popup-overlay;
 }
 
@@ -265,13 +270,27 @@
   @extend %popup-inner;
 }
 
+.popup-profile__inner {
+  max-width: 600px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: $color-white;
+  z-index: 15;
+  transition: transform 0.4s ease-in;
+}
+
 .popup-login__close,
-.popup-register__close {
+.popup-register__close,
+.popup-profile__close {
   @extend %popup-close;
 }
 
 .popup-login__content,
-.popup-register__content {
+.popup-register__content,
+.popup-profile__content {
   @extend %popup-content;
 }
 
@@ -306,11 +325,109 @@
 }
 
 .popup-login__title,
-.popup-register__title {
+.popup-register__title,
+.popup-profile__title {
   @extend %popup-title;
 }
 
 
 input._error {
   box-shadow: 0 0 7px rgb(239, 97, 97);
+}
+
+
+/*----------buy-popup-----------*/
+
+.popup-buy {
+  @extend %popup-overlay;
+}
+.popup-buy__inner {
+  @extend %popup-inner;
+  max-width: 640px;
+  width: 100%;
+  padding: 0;
+}
+
+.popup-buy__close {
+  @extend %popup-close;
+}
+
+.popup-buy__title-box {
+  background-color: $color-title;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.popup-buy__title {
+  color: $color-white;
+  text-align: center;
+  @extend %forum-400;
+  font-size: 40px;
+  line-height: 20px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+.popup-buy__columns {
+  display: flex;
+  column-gap: 40px;
+  padding: 30px 35px 40px;
+}
+
+.popup-buy__column {
+  &:first-child {
+    max-width: 200px;
+  }
+  &:last-child{
+    max-width: 330px;
+  }
+}
+
+.popup-buy__label {
+  @extend %popup-label;
+}
+.popup-buy__input {
+  @extend %popup-input;
+  display: block;
+}
+.popup-buy__btn-box {
+  display: flex;
+  align-items: flex-end;
+  column-gap: 25px;
+  margin-top: 20px;
+}
+.popup-buy__btn {
+  @extend %popup-btn;
+  margin: 0;
+}
+.popup-buy__price {
+  color: $color-title;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.popup-buy__desc {
+  color: $color-grey;
+  font-size: 15px;
+  line-height: 133.333%;
+  letter-spacing: 2px;
+  max-width: 330px;
+}
+
+#cvc, 
+#exp1,
+#exp2 {
+  max-width: 45px;
+}
+.popup-buy__inputs-box {
+  display: flex;
+  column-gap: 10px;
+}
+.popup-buy.popup--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-buy.popup--active .popup-buy__inner {
+  transform: translate(-50%, -50%) scale(1);
 }

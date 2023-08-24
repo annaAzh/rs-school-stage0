@@ -6,7 +6,7 @@ import stickyTab from "./stickyTab.js";
 import userMenu from "./userMenu.js";
 import modals from "./auth.js";
 import validation from "./validation.js";
-import userIsRegitred from "./userIsRegitred.js";
+import userProfile from "./userProfile.js";
 
 window.addEventListener('resize', () => {
   window.location.reload();
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     validation('.popup-login__form');
     validation('.popup-register__form');
     try {
-      userIsRegitred();
+      userProfile();
     } catch(e){}
     
 });
