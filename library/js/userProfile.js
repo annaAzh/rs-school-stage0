@@ -1,6 +1,7 @@
 import modals from "./auth.js";
 import createPopup from "./createPopup.js";
 
+
 const userProfile = () => {
   let visits = 0;
   const books = 0;
@@ -48,16 +49,12 @@ const userProfile = () => {
     </div>`;
   };
 
-  
-
-
 
   //create user's profile
   if (key.isRegistred) {
     createPopup(userLogo, key.login, key.surname, visits, books, key.userID);
     modals('.popup-auth__link-profile', '.popup-profile', '.popup-profile__close', 'popup--active');
   }
-  
 
 
   return key;

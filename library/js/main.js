@@ -5,8 +5,9 @@ import setTabs from "./tabs.js";
 import stickyTab from "./stickyTab.js";
 import userMenu from "./userMenu.js";
 import modals from "./auth.js";
-import validation from "./validation.js";
+import {validation} from "./validation.js";
 import userProfile from "./userProfile.js";
+import checkUser from "./checkUser.js";
 
 window.addEventListener('resize', () => {
   window.location.reload();
@@ -28,8 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
     modals('.popup-auth__link-register', '.popup-register', '.popup-register__close', 'popup--active');
     modals('.popup-login__link', '.popup-register', '.popup-register__close', 'popup--active');
     modals('.popup-register__link', '.popup-login', '.popup-login__close', 'popup--active');
+    // modals('.tab-item__btn', '.popup-buy', '.popup-buy__close', 'popup--active');
     validation('.popup-login__form');
     validation('.popup-register__form');
+    // validation('.popup-buy__form');
+    checkUser();
     try {
       userProfile();
     } catch(e){}

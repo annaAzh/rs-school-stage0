@@ -428,7 +428,7 @@ body {
 .popup-buy__input, .popup-register__input,
 .popup-login__input {
   border: 1px solid #BB945F;
-  padding: 5px 10px;
+  padding: 5px;
   height: 20px;
   width: 100%;
   margin-top: 10px;
@@ -537,6 +537,10 @@ input._error {
 }
 
 /*----------buy-popup-----------*/
+.popup-buy {
+  z-index: 130;
+}
+
 .popup-buy__inner {
   max-width: 640px;
   width: 100%;
@@ -566,9 +570,14 @@ input._error {
 
 .popup-buy__column:first-child {
   max-width: 200px;
+  width: 100%;
 }
 .popup-buy__column:last-child {
   max-width: 330px;
+}
+
+#cvc {
+  margin-bottom: 20px;
 }
 
 .popup-buy__input {

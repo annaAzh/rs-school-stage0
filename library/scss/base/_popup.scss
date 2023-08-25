@@ -178,7 +178,7 @@
 
 %popup-input {
   border: 1px solid $color-accent;
-  padding: 5px 10px;
+  padding: 5px;
   height: 20px;
   width: 100%;
   margin-top: 10px;
@@ -340,6 +340,7 @@ input._error {
 
 .popup-buy {
   @extend %popup-overlay;
+  z-index: 130;
 }
 .popup-buy__inner {
   @extend %popup-inner;
@@ -375,12 +376,15 @@ input._error {
 .popup-buy__column {
   &:first-child {
     max-width: 200px;
+    width: 100%;
   }
   &:last-child{
     max-width: 330px;
   }
 }
-
+#cvc{
+  margin-bottom: 20px;
+}
 .popup-buy__label {
   @extend %popup-label;
 }

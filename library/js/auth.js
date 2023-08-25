@@ -1,10 +1,11 @@
 const modals = (triggerSelector, modalSelector, closeSelector, active) => {
-  const trigger = document.querySelector(triggerSelector);
+  const trigger = document.querySelectorAll(triggerSelector);
   const modal = document.querySelector(modalSelector);
   const close = document.querySelector(closeSelector);
   const popups = document.querySelectorAll('[data-modal]');
 
-  trigger.addEventListener('click', (e) => {
+  trigger.forEach(elem => {
+    elem.addEventListener('click', (e) => {
     if (e.target) {
       e.preventDefault();
     }
@@ -16,6 +17,7 @@ const modals = (triggerSelector, modalSelector, closeSelector, active) => {
 
     modal.classList.add(active);
     document.body.classList.add('noscroll');
+    })
   });
   
   close.addEventListener('click', () => {

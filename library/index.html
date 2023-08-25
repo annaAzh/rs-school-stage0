@@ -210,7 +210,7 @@
                   <p class="tab-item__text">A timely and revelatory new biography of Queen Elizabeth (and her family)
                     exploring how the Windsors have evolved and thrived as the modern world has changed around them.
                   </p>
-                  <button class="item-tab tab-item__btn tab-item__btn--disabled" disabled>Own</button>
+                  <button class="item-tab tab-item__btn">Buy</button>
                   <div class="tab-item__img-box">
                     <img class="tab-item__img" src="assets/images/winter/4.jpg" alt="The Last Queen">
                   </div>
@@ -655,7 +655,7 @@
       </div>
     </div>
   </div>
-  <div class="popup-buy popup--active ">
+  <div class="popup-buy">
     <div class="popup-buy__inner">
       <div class="popup-buy__content">
         <div class="popup-buy__close">
@@ -670,17 +670,17 @@
         <div class="popup-buy__columns">
           <div class="popup-buy__column">
             <form action="#" class="popup-buy__form">
-              <label class="popup-buy__label">FBank card number
-                <input type="text" class="popup-buy__input" id="card-number">
+              <label class="popup-buy__label">Bank card number
+                <input type="text" class="popup-buy__input" id="card-number" data-length="16" maxlength="16">
               </label>
               <label class="popup-buy__label">Expiration code
                 <div class="popup-buy__inputs-box">
-                  <input type="text" class="popup-buy__input" id="exp1">
-                  <input type="text" class="popup-buy__input" id="exp2">
+                  <input type="text" class="popup-buy__input" id="exp1" data-maxchars="2" maxlength="2">
+                  <input type="text" class="popup-buy__input" id="exp2" data-maxchars="2" maxlength="2">
                 </div>
               </label>
               <label class="popup-buy__label">CVC
-                <input type="text" class="popup-buy__input" id="cvc">
+                <input type="text" class="popup-buy__input" id="cvc" data-cvc="3" maxlength="3">
               </label>
               <label class="popup-buy__label">Cardholder name
                 <input type="text" class="popup-buy__input" id="cardholder-name">
