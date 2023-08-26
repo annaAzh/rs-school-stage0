@@ -49,7 +49,7 @@ const createPopup = (shortName, name, surname, visits, books, userNumber) => {
     </ul>
     <div class="popup-profile__card">
       Card number
-      <span>${userNumber}</span>
+      <span class="popup-profile__card-number">${userNumber}</span>
       <button class="popup-profile__copy">
         <img class="popup-profile__copy-img" src="assets/icons/copy.svg" alt="copy image">
       </button>

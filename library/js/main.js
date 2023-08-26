@@ -9,6 +9,8 @@ import {validation} from "./validation.js";
 import userProfile from "./userProfile.js";
 import checkUser from "./checkUser.js";
 
+
+
 window.addEventListener('resize', () => {
   window.location.reload();
 });
@@ -33,11 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
     validation('.popup-login__form');
     validation('.popup-register__form');
     // validation('.popup-buy__form');
-    checkUser();
+  
     try {
       userProfile();
     } catch(e){}
-    
+    checkUser();
+
+
+
+   
 });
 
 

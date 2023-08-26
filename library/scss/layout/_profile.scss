@@ -148,8 +148,14 @@ ul.popup-profile__list {
   }
 }
 .popup-profile__copy {
+  cursor: pointer;
   border: none;
   background-color: transparent;
+  opacity: 1;
+  transition: all 0.3s ease-in;
+  &:hover {
+    opacity: 0.5;
+  }
 }
 .popup-profile__copy-img {
   width: 13px;

@@ -1,5 +1,7 @@
 import modals from "./auth.js";
 import {setValidation, validation, cleanForm, formAddError, formRemoveError} from "./validation.js";
+import copyData from "./copyData.js";
+
 
 const checkUser = () => {
 
@@ -13,9 +15,8 @@ const checkUser = () => {
   if (key) {
     if (key.isRegistred) {
       modals('.tab-item__btn', '.popup-buy', '.popup-buy__close', 'popup--active');
-    
-
-
+  
+     
 
       form.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -33,6 +34,15 @@ const checkUser = () => {
   } else {
     modals('.tab-item__btn', '.popup-login', '.popup-login__close', 'popup--active');
     validation('.popup-login__form');
+  }
+
+  //copy userID to clipboard
+  if (key) {
+    if (key.isRegistred) {
+      try {
+        copyData('.popup-profile__copy', '.popup-profile__card-number');
+      } catch(e) {}
+    }
   }
 
 };
