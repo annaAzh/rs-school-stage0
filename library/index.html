@@ -612,9 +612,11 @@
           <form action="#" class="popup-login__form">
             <label class="popup-login__label">E-mail or readers card
               <input type="text" class="popup-login__input" data-login="true">
+              <p class="input__error">This field is required</p>
             </label>
             <label class="popup-login__label">Password
               <input type="text" class="popup-login__input" data-maxlength="8">
+              <p class="input__error">Password should be minimum 8 characters</p>
             </label>
             <button class="popup-login__btn" type="submit">Log In</button>
           </form>
@@ -635,15 +637,19 @@
           <form action="#" class="popup-register__form">
             <label class="popup-register__label">First name
               <input type="text" class="popup-login__input" id="name">
+              <p class="input__error">This field is required</p>
             </label>
             <label class="popup-register__label">Last name
               <input type="text" class="popup-login__input" id="surname">
+              <p class="input__error">This field is required</p>
             </label>
             <label class="popup-register__label">E-mail
-              <input type="text" class="popup-login__input" data-email="true" id="email">
+              <input type="text" class="popup-login__input" data-email="true" id="email">          
+                <p class="input__error">Type valid email</p>
             </label>
             <label class="popup-register__label">Password
-              <input type="text" class="popup-login__input" data-maxlength="8" id="password">
+              <input type="password" class="popup-login__input" data-maxlength="8" id="password">
+              <p class="input__error">Password should be minimum 8 characters</p>
             </label>
             <button class="popup-register__btn" type="submit">Sign Up</button>
           </form>
@@ -672,24 +678,31 @@
             <form action="#" class="popup-buy__form">
               <label class="popup-buy__label">Bank card number
                 <input type="text" class="popup-buy__input" id="card-number" data-length="16" maxlength="16">
+                <p class="input__error">Card number should be equal 8 characters</p>
               </label>
               <label class="popup-buy__label">Expiration code
                 <div class="popup-buy__inputs-box">
                   <input type="text" class="popup-buy__input" id="exp1" data-maxchars="2" maxlength="2">
+                  <p class="input__error">This field should contains 2 digits</p>
                   <input type="text" class="popup-buy__input" id="exp2" data-maxchars="2" maxlength="2">
+                  <p class="input__error">This field should contains 2 digits</p>
                 </div>
               </label>
               <label class="popup-buy__label">CVC
                 <input type="text" class="popup-buy__input" id="cvc" data-cvc="3" maxlength="3">
+                <p class="input__error">This field should contains 3 digits</p>
               </label>
               <label class="popup-buy__label">Cardholder name
                 <input type="text" class="popup-buy__input" id="cardholder-name">
+                <p class="input__error">This field is required</p>
               </label>
               <label class="popup-buy__label">Postal code
                 <input type="text" class="popup-buy__input" id="postal">
+                <p class="input__error">This field is required</p>
               </label>
               <label class="popup-buy__label">City / Town
                 <input type="text" class="popup-buy__input" id="town">
+                <p class="input__error">This field is required</p>
               </label>
               <div class="popup-buy__btn-box">
                 <button class="popup-buy__btn" type="submit">Buy</button>

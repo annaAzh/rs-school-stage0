@@ -2,8 +2,9 @@ import modals from "./auth.js";
 import createPopup from "./createPopup.js";
 
 
+
 const userProfile = () => {
-  let visits = 0;
+
   const books = 0;
   let userLogo;
   const userProfile = document.querySelector('.user-nav__link');
@@ -12,34 +13,33 @@ const userProfile = () => {
  
   //get data from localStorage
   let key = JSON.parse(localStorage.getItem('newLibraryUser'));
+  let visits = key.visits;
 
-  if (key.isRegistred && key.isLogin) {
-    visits +=1;
 
-    userLogo = key.login[0].toUpperCase() + key.lastName[0].toUpperCase();
-  }
+  //if user is registred
 
   //check userLogo if user is register
-  if (key.isRegistred) {
+  if (key.isRegistred  && key.isLogin) {
+    userLogo = key.firstName[0].toUpperCase() + key.lastName[0].toUpperCase();
     userProfile.innerHTML = `
     <span class="user-nav__link-isRegister">${userLogo}</span>
     `;
-    visits = 1;
   }  else {
     userProfile.innerHTML = `<a class="user-nav__link" href="#">
     <img class="user-nav__img" src="assets/icons/user.svg" alt="user icon">
     </a>`;
   };
-  //check profile popup if user is register
-  if (key.isRegistred) {
+
+  //change popup-menu
+  if (key.isRegistred && key.isLogin) {
     profilePopup.innerHTML = `<div class="popup-auth__inner">
     <div class="popup-auth__content">
       <h5 class="popup-auth__title">${key.userID}</h5>
       <a class="popup-auth__link-login popup-auth__link-profile" href="#">My profile</a>
-      <a class="popup-auth__link-register" href="#">Log Out</a>
+      <a class="popup-auth__link-logout" href="#">Log Out</a>
     </div>
     </div>`;
-  }  else {
+  }  else if (key.isRegistred && !key.isLogin) {
     profilePopup.innerHTML = `<div class="popup-auth__inner">
     <div class="popup-auth__content">
       <h5 class="popup-auth__title">Profile</h5>
@@ -50,9 +50,9 @@ const userProfile = () => {
   };
 
 
-  //create user's profile
-  if (key.isRegistred) {
-    createPopup(userLogo, key.login, key.surname, visits, books, key.userID);
+  //create user's profile and fill it data
+  if (key.isRegistred && key.isLogin) {
+    createPopup(userLogo, key.firstName, key.lastName, visits, books, key.userID);
     modals('.popup-auth__link-profile', '.popup-profile', '.popup-profile__close', 'popup--active');
   }
 

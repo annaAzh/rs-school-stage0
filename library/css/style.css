@@ -1,5 +1,6 @@
 @charset "UTF-8";
-.card__subtitle, .label__name, .popup-auth__link-login-register, .popup-auth__link-login, body {
+.card__subtitle, .label__name, .popup-auth__link-login-register,
+.popup-auth__link-logout, .popup-auth__link-login, body {
   font-family: "Inter", sans-serif;
   font-weight: 400;
 }
@@ -287,12 +288,12 @@ body {
 }
 
 .popup-auth__content {
-  padding: 5px 10px 20px;
+  padding: 5px 5px 20px;
   text-align: center;
 }
 
 .popup-auth__title {
-  font-size: 15px;
+  font-size: 12px;
   line-height: 20px;
   letter-spacing: normal;
   padding-bottom: 5px;
@@ -325,18 +326,25 @@ body {
   color: #BB945F;
 }
 
-.popup-auth__link-login-register {
+.popup-auth__link-login-register,
+.popup-auth__link-logout {
   display: block;
   letter-spacing: normal;
   font-size: 15px;
   line-height: 20px;
   transition: all 0.3s ease-in;
 }
-.popup-auth__link-login-register + .popup-auth__link-register {
+.popup-auth__link-login-register + .popup-auth__link-register,
+.popup-auth__link-logout + .popup-auth__link-register {
   margin-top: 10px;
 }
-.popup-auth__link-login-register:hover {
+.popup-auth__link-login-register:hover,
+.popup-auth__link-logout:hover {
   color: #BB945F;
+}
+
+.popup-auth__link-logout {
+  margin-top: 10px;
 }
 
 /*--------popup-login------------*/
@@ -630,6 +638,16 @@ input._error {
 
 .popup-buy.popup--active .popup-buy__inner {
   transform: translate(-50%, -50%) scale(1);
+}
+
+.input__error {
+  font-size: 8px;
+  color: red;
+  display: none;
+}
+
+.input__error-show {
+  display: block;
 }
 
 .fade {

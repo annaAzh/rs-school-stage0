@@ -8,7 +8,7 @@ import modals from "./auth.js";
 import {validation} from "./validation.js";
 import userProfile from "./userProfile.js";
 import checkUser from "./checkUser.js";
-
+import logOut from "./logout.js";
 
 
 window.addEventListener('resize', () => {
@@ -40,6 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
       userProfile();
     } catch(e){}
     checkUser();
+  
+  logOut();
+  
+
+    
 
 
 

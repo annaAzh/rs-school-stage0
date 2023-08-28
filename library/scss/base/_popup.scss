@@ -34,13 +34,13 @@
 }
 
 .popup-auth__content {
-  padding: 5px 10px 20px;
+  padding: 5px 5px 20px;
   text-align: center;
 }
 
 .popup-auth__title {
   @extend %inter-700;
-  font-size: 15px;
+  font-size: 12px;
   line-height: 20px;
   letter-spacing: normal;
   padding-bottom: 5px;
@@ -77,7 +77,8 @@
   }
 }
 
-.popup-auth__link-login-register {
+.popup-auth__link-login-register,
+.popup-auth__link-logout {
   display: block;
   letter-spacing: normal;
   @extend %inter-400;
@@ -89,11 +90,16 @@
     margin-top: 10px;
   }
 
+
+
   &:hover {
     color: $color-accent;
   }
 }
 
+.popup-auth__link-logout{
+  margin-top: 10px;
+}
 
 /*--------popup-login------------*/
 
@@ -434,4 +440,16 @@ input._error {
 
 .popup-buy.popup--active .popup-buy__inner {
   transform: translate(-50%, -50%) scale(1);
+}
+
+
+
+.input__error {
+  font-size: 8px;
+  color: red;
+  display: none;
+}
+
+.input__error-show {
+  display: block;  
 }

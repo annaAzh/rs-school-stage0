@@ -6,23 +6,35 @@ export function validation (formSelector) {
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-    setValidation(this);
+
+    let error = setValidation(this);
+  
+    form.querySelectorAll('input').forEach(elem => elem.addEventListener('keyup', () => {
+      setValidation(form);
+    }));
+
 
     const firstName = form.querySelector('#name');
     const lastName = form.querySelector('#surname');
     const email = form.querySelector('#email');
     const password = form.querySelector('#password');
     const userId = userID();
-    setLocalStorage(firstName, lastName, email, password, userId);
+    const visit = 1;
+    const countBook = 0;
 
-    setTimeout(() => {
-      cleanForm(this);
-    }, 1000); 
+    if (error !== 'true') {
+      setLocalStorage(firstName, lastName, email, password, userId, visit, countBook);
+
+      setTimeout(() => {
+        cleanForm(form);
+      }, 1000); 
+    } else {
+      return;
+    }
   });
 
   
 };
-
 
 export function cleanForm(form) {
   form.reset();
@@ -35,10 +47,17 @@ export function setValidation(currentForm) {
   const inputs = currentForm.querySelectorAll('input');
 
   inputs.forEach(elem =>  {
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    checkCondition(elem);
+  });
+}
+
+function checkCondition(elem) {
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  let error;
 
     if (elem.value === '') {
       formAddError(elem);
+      error = true;
     } else {
       formRemoveError(elem);
     }
@@ -46,6 +65,7 @@ export function setValidation(currentForm) {
     if (elem.dataset.maxlength) {
       if (elem.value.length < elem.dataset.maxlength) {
         formAddError(elem);
+        error = true;
       } else {
         formRemoveError(elem);
       }
@@ -56,17 +76,19 @@ export function setValidation(currentForm) {
         formRemoveError(elem);
       } else {
         formAddError(elem);
+        error = true;
       }
     }
 
     if (elem.dataset.email) {
       if (!elem.value.match(emailPattern)) {
         formAddError(elem);
+        error = true;
       } else {
         formRemoveError(elem);
       }
     }
-    // check Bank card number for length - 15 chars
+    // check Bank card number for length - 16 digits
     const numberPattern = /\d/g;
     if (elem.dataset.length) {
       if (elem.value.length === 16 && elem.value.match(numberPattern)) {
@@ -74,6 +96,7 @@ export function setValidation(currentForm) {
       }
       else {
         formAddError(elem);
+        error = true;
       }
     }
 
@@ -83,6 +106,7 @@ export function setValidation(currentForm) {
         formRemoveError(elem);
       } else {
         formAddError(elem);
+        error = true;
       }
     }
 
@@ -93,31 +117,37 @@ export function setValidation(currentForm) {
         formRemoveError(elem);
       } else {
         formAddError(elem);
+        error = true;
       }
     }
-  });
+  return error;
 }
 
 export function formAddError(input) {
 input.parentElement.classList.add('_error');
 input.classList.add('_error');
+input.parentNode.querySelector('.input__error').classList.add('input__error-show');
 }
 
 export function formRemoveError(input) {
 input.parentElement.classList.remove('_error');
 input.classList.remove('_error');
+input.parentNode.querySelector('.input__error').classList.remove('input__error-show');
 }
 
 
-function setLocalStorage(firstName, lastName, email, password, userId) {
+function setLocalStorage(firstName, lastName, email, password, userId, visit = 1, countBook) {
   let user = {
     isRegistred: 'true',
     isLogin: 'true',
-    login: firstName.value,
+    login: email.value,
+    firstName: firstName.value,
     lastName: lastName.value,
     email: email.value,
     password: password.value,
-    userID: userId
+    userID: userId,
+    visits: visit,
+    countBook: 0
   };
 
   let userObj = JSON.stringify(user);

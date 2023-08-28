@@ -40,12 +40,6 @@
   }
 }
 
-// .input__box {
-  // @media screen and (max-width: 730px) {
-  //   grid-column: span 4;
-  // }
-// }
-
 .label {
   padding: 5px;
   cursor: pointer;
@@ -238,7 +232,6 @@
     }
   }
 
-
   @include media-mobileLarge {
     order: 6;
   }
@@ -263,12 +256,6 @@
   height: auto;
   object-fit: cover;
 }
-
-// #spring-tab,
-// #summer-tab,
-// #autumn-tab {
-//   display: none;
-// }
 
 .tab-item__btn.tab-item__btn--disabled {
   color: $color-accent;

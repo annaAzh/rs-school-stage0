@@ -1,4 +1,4 @@
-const createPopup = (shortName, name, surname, visits, books, userNumber) => {
+const createPopup = (shortName, firstName, lastName, visits, books, userNumber) => {
   const element = document.createElement('div');
   element.innerHTML = `
   <div class="popup-profile__inner">
@@ -11,8 +11,8 @@ const createPopup = (shortName, name, surname, visits, books, userNumber) => {
       <p class="popup-profile__user-name">${shortName}</p>
     </div>
     <div class="popup-profile__name-box">
-      <p class="popup-profile__full-name">${name}</p>
-      <p class="popup-profile__full-name">${surname}</p>
+      <p class="popup-profile__full-name">${firstName}</p>
+      <p class="popup-profile__full-name">${lastName}</p>
     </div>
   </div>
   <div class="popup-profile__column">
