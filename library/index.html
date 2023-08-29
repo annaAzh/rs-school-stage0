@@ -545,8 +545,8 @@
               <p class="card__text">You will be able to see a reader card after logging into account or you can register
                 a new account</p>
               <div class="card__auth-box">
-                <button class="card__auth">Sign Up</button>
-                <button class="card__auth">Log in</button>
+                <button class=" card__auth card__auth-signUp">Sign Up</button>
+                <button class=" card__auth card__auth-logIn">Log in</button>
               </div>
             </div>
           </div>
@@ -598,7 +598,7 @@
         <div class="popup-auth__content">
           <h5 class="popup-auth__title">Profile</h5>
           <a class="popup-auth__link-login" href="#">Log In</a>
-          <a class="popup-auth__link-register" href="#">Register</a>
+          <a class="popup-auth__link-register" href="#" >Register</a>
         </div>
       </div>
     </div>
@@ -611,11 +611,11 @@
           <div class="popup-login__title">Login</div>
           <form action="#" class="popup-login__form">
             <label class="popup-login__label">E-mail or readers card
-              <input type="text" class="popup-login__input" data-login="true">
+              <input type="text" class="popup-login__input" data-login="true" id="login">
               <p class="input__error">This field is required</p>
             </label>
             <label class="popup-login__label">Password
-              <input type="text" class="popup-login__input" data-maxlength="8">
+              <input type="text" class="popup-login__input" data-maxlength="8" id="passwordAuth">
               <p class="input__error">Password should be minimum 8 characters</p>
             </label>
             <button class="popup-login__btn" type="submit">Log In</button>
@@ -661,7 +661,7 @@
       </div>
     </div>
   </div>
-  <div class="popup-buy">
+  <div class="popup-buy" data-modal>
     <div class="popup-buy__inner">
       <div class="popup-buy__content">
         <div class="popup-buy__close">
@@ -728,7 +728,7 @@
 
   </div>
 
-  <script src="js/main.js" type="module"></script>
+  <script src="js/index.js" type="module"></script>
 </body>
 
 </html>
