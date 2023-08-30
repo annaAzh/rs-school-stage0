@@ -21,14 +21,16 @@ export function validation (formSelector) {
     const password = form.querySelector('#password');
     const userId = userID();
     const visit = 1;
-    const countBook = 0; 
+    const countBook = 0;
+    const bookList = [{id: 1, book: 'ggggggg'}, {id: 2, book: 'aaaa'}];
+    const hasCard = 'false';
 
 
     if (error !== false) {
       console.log('error')
     } else {
       console.log('You are registred');
-      setLocalStorage(firstName, lastName, email, password, userId, visit, countBook);
+      setLocalStorage(firstName, lastName, email, password, userId, visit, countBook, bookList, hasCard);
       console.log(JSON.parse(localStorage.getItem('newLibraryUser')));
       setTimeout(() => {
         cleanForm(form);
@@ -57,7 +59,7 @@ export function setFormValidation(currentForm) {
   return error;
 }
 
-function checkCondition(elem) {
+export function checkCondition(elem) {
   const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
   let error;
 
@@ -149,7 +151,7 @@ input.parentNode.querySelector('.input__error').classList.remove('input__error-s
 }
 
 
-function setLocalStorage(firstName, lastName, email, password, userId, visit = 1, countBook = 0) {
+function setLocalStorage(firstName, lastName, email, password, userId, visit = 1, countBook = 0, bookList=[{id: 1, book: 'ggggggg'}, {id: 2, book: 'aaaa'}], hasCard = 'false') {
   let user = {
     isRegistred: 'true',
     isAuth: 'true',
@@ -160,7 +162,9 @@ function setLocalStorage(firstName, lastName, email, password, userId, visit = 1
     password: password.value,
     userID: userId,
     visits: visit,
-    countBook: countBook
+    countBook: countBook,
+    bookList: bookList,
+    hasCard: hasCard
   };
 
   let userObj = JSON.stringify(user);
