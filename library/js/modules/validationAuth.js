@@ -12,6 +12,7 @@ const validationAuth = (formSelector) => {
     if (key.password === passwordInput.value) {
       if (key.email === logInInput.value || key.userID === logInInput.value) {
         key.isAuth = 'true';
+        key.visits += 1;
         localStorage.setItem('newLibraryUser', JSON.stringify(key));
         setTimeout(() => {
           cleanForm(form);

@@ -149,7 +149,7 @@ input.parentNode.querySelector('.input__error').classList.remove('input__error-s
 }
 
 
-function setLocalStorage(firstName, lastName, email, password, userId, visit = 1, countBook) {
+function setLocalStorage(firstName, lastName, email, password, userId, visit = 1, countBook = 0) {
   let user = {
     isRegistred: 'true',
     isAuth: 'true',

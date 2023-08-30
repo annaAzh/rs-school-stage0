@@ -3,6 +3,9 @@ import { validation } from "./validation.js";
 import userMenu from "./userMenu.js";
 import createUserPopup from "./userPopup.js";
 import validationAuth from "./validationAuth.js";
+import copyData from "./copyData.js";
+import cardRender from "./cardRender.js";
+import checkCard from "./checkCard.js";
 
 const userState = () => {
   let key = JSON.parse(localStorage.getItem('newLibraryUser'));
@@ -50,10 +53,25 @@ try {
     userProfile.innerHTML = `
       <span class="user-nav__link-isRegister">${userLogo}</span>
     `;
+    
+
 
   //create User's profile
-    createUserPopup(userLogo, key.firstName, key.lastName, key.visits, key.ountBook, key.userID);
+    createUserPopup(userLogo, key.firstName, key.lastName, key.visits, key.countBook, key.userID);
     modals('.popup-auth__link-profile', '.popup-profile', '.popup-profile__close', 'popup--active');
+
+
+
+  // copy userID number at clipBoard
+    copyData('.popup-profile__copy', '.popup-profile__card-number');
+
+  //change card section for login user
+    cardRender(key.firstName, key.lastName, key.userID, key.visits, key.countBook);
+
+
+
+   //open user menu on btn click at card section
+    modals('.popup-profile-btn', '.popup-profile', '.popup-profile__close', 'popup--active');
 
     modals('.user-nav', '.popup-auth', '.popup-auth', 'user-nav--active');
     // modals('.popup-auth__link-login', '.popup-login', '.popup-login__close', 'popup--active');
@@ -127,14 +145,8 @@ console.log(key);
 
     // Блок Digital Library Cards. Если введённые имя и номер карты совпадают с данными пользователя, то 
     // отображается панель с информацией, вместо кнопки Check the card на 10 секунд
-    document.querySelector('.card__holder-form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      (document.querySelectorAll('.card__holder-form input').forEach(input => {
-        if (input.value !== '') {
-          console.log('You sould made this form for 10 sec')
-        }
-        }))
-    });
+    
+    checkCard('.card__holder-form', '.holder__input-name', '.holder__input-card', key);
 
 
   }

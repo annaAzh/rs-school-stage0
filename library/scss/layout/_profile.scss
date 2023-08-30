@@ -80,6 +80,31 @@
   margin-bottom: 20px;
 }
 
+.card__holder-form > .popup-profile__stat {
+  justify-content: center;
+  column-gap: 35px;
+  margin-bottom: 0;
+
+  .popup-profile__visits-span,
+  .popup-profile__bonuses-span,
+  .popup-profile__books-span {
+    color: $color-primary;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 200%;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+  }
+
+  .popup-profile__books,
+  .popup-profile__bonuses,
+  .popup-profile__visits {
+    line-height: 0;
+  }
+}
+
+
+
 .popup-profile__visits,
 .popup-profile__bonuses,
  .popup-profile__books {

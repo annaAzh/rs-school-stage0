@@ -534,10 +534,13 @@
               <form class="card__holder-form holder">
                 <div class="holder__inner">
                   <h3 class="holder__title">Brooklyn Public Library</h3>
-                  <input class="holder__input" type="text" placeholder="Reader's name" pattern="[A-Za-z\s]+$" required>
-                  <input class="holder__input" type="text" placeholder="Card number" pattern="[0-9-\s]+$" required>
+                  <!-- pattern="[A-Za-z\s]+$" pattern="[0-9-\s]+$"-->
+                  <input class="holder__input holder__input-name" type="text" placeholder="Reader's name" required>
+                  <input class="holder__input holder__input-card" type="text" placeholder="Card number" required>
                 </div>
-                <button class="holder__btn" type="submit">Check the card</button>
+                <div class="card__holder-btn">
+                  <button class="holder__btn" type="submit">Check the card</button>
+                </div>
               </form>
             </div>
             <div class="card__column">
