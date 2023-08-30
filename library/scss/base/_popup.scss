@@ -336,6 +336,26 @@
   @extend %popup-title;
 }
 
+.popup-profile__list {
+  max-height: 80px;
+  overflow: scroll;
+}
+
+.popup-profile__item {
+  padding-left: 30px;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12px;
+    background-color: $color-primary;
+    border-radius: 50%;
+  }
+}
 
 input._error {
   box-shadow: 0 0 7px rgb(239, 97, 97);

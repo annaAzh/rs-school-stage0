@@ -1,4 +1,7 @@
-const createUserPopup = (shortName, firstName, lastName, visits, books, userNumber) => {
+const createUserPopup = (shortName, firstName, lastName, visits, books, userNumber, bookTitle) => {
+  let arr = []
+  bookTitle.forEach(item => arr.push(item.book));
+
   const element = document.createElement('div');
   element.innerHTML = `
   <div class="popup-profile__inner">
@@ -36,16 +39,6 @@ const createUserPopup = (shortName, firstName, lastName, visits, books, userNumb
     </div>
     <h5 class="popup-profile__subtitle">Rented books</h5>
     <ul class="popup-profile__list">
-      <li class="popup-profile__item">
-        <a class="popup-profile__link" href="#">
-          The Last Queen, Clive Irving
-        </a>
-      </li>
-      <li class="popup-profile__item">
-        <a class="popup-profile__link" href="#">
-          Dominicana, Angie Cruz
-        </a>
-      </li>
     </ul>
     <div class="popup-profile__card">
       Card number
@@ -60,7 +53,18 @@ const createUserPopup = (shortName, firstName, lastName, visits, books, userNumb
   `;
   element.classList.add('popup-profile');
   document.querySelector('.wrapper').append(element);
-  console.log(element);
+
+  arr.forEach(title => {
+    const bookElement = document.createElement('li');
+    bookElement.innerHTML = `
+      <a class="popup-profile__link" href="#">
+        ${title}
+      </a>
+    `;
+    bookElement.classList.add('popup-profile__item');
+    document.querySelector('.popup-profile__list').append(bookElement);
+  })
+
   return element;
 };
 

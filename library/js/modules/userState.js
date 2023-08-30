@@ -64,7 +64,7 @@ try {
 
 
   //create User's profile
-    createUserPopup(userLogo, key.firstName, key.lastName, key.visits, key.countBook, key.userID);
+    createUserPopup(userLogo, key.firstName, key.lastName, key.visits, key.countBook, key.userID, key.bookList);
     modals('.popup-auth__link-profile', '.popup-profile', '.popup-profile__close', 'popup--active');
 
 
@@ -133,12 +133,30 @@ try {
 
 try {
   if (key.isRegistred === 'true' && key.isAuth === 'true' && key.hasCard === 'true') {
+    
+
+//check localStorage for bookList
+    let arr = [];
+    key.bookList.forEach((item) => {
+      arr.push(item['book']);
+    });
+
+    document.querySelectorAll('.tab-item__btn').forEach(elem => {
+      let content = elem.parentNode.querySelector('.tab-item__title').textContent.replace(/\s{2,}/g, '');
+      if (arr.indexOf(content) !== -1) {
+        setDisabled(elem);
+    }});
     checkBookList(key);
-  }
+
+  }  
 } catch(e) {}
 
 
-
+function setDisabled(elem) {
+  elem.textContent = 'Own';
+  elem.classList.add('tab-item__btn--disabled');
+  elem.setAttribute('disabled', '');
+}
 
 
 
@@ -163,8 +181,8 @@ try {
     modals('.popup-register__link', '.popup-login', '.popup-login__close', 'popup--active');
     modals('.tab-item__btn', '.popup-login', '.popup-login__close', 'popup--active');
     // modals('.tab-item__btn', '.popup-buy', '.popup-buy__close', 'popup--active');
-    modals('.card__auth-signUp', '.popup-login', '.popup-login__close', 'popup--active');
-    modals('.card__auth-logIn', '.popup-register', '.popup-register__close', 'popup--active');
+    modals('.card__auth-logIn', '.popup-login', '.popup-login__close', 'popup--active');
+    modals('.card__auth-signUp', '.popup-register', '.popup-register__close', 'popup--active');
     // validation('.popup-login__form');
     validation('.popup-register__form');
     

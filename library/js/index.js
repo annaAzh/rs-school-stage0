@@ -6,6 +6,10 @@ import stickyTab from "./modules/stickyTab.js";
 import userMenu from "./modules/userMenu.js";
 import userState from "./modules/userState.js";
 
+window.addEventListener('resize', () => {
+  window.location.reload();
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
   console.log(' Вёрстка валидная +10 \n Вёрстка семантическая +16 \n Вёрстка соответствует макету +54 \n Общие требования к верстке +20 \n ');
