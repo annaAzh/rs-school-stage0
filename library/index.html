@@ -58,6 +58,7 @@
               <img class="user-nav__img" src="assets/icons/user.svg" alt="user icon">
             </a>
           </div>
+
         </div>
       </div>
     </header>
@@ -79,9 +80,9 @@
             shop inside
           </p>
           <div class="slider-wrapper">
-            <div class="arrow arrow-left">
+            <button class="arrow arrow-left">
               <img class="arrow__img" src="assets/icons/Carret_Left.svg" alt="slider arrow">
-            </div>
+            </button>
             <div class="slider__inner">
               <div class="slider">
                 <div class="slider__item">
@@ -104,13 +105,13 @@
                 <span class="slider__dot slider__dot--active"></span>
                 <span class="slider__dot"></span>
                 <span class="slider__dot"></span>
-                <span class="slider__dot slider__dot-laptop"></span>
-                <span class="slider__dot slider__dot-laptop"></span>
+                <span class="slider__dot"></span>
+                <span class="slider__dot"></span>
               </div>
             </div>
-            <div class="arrow arrow-right">
+            <button class="arrow arrow-right">
               <img class="arrow__img" src="assets/icons/Carret_Right.svg" alt="slider arrow">
-            </div>
+            </button>
           </div>
         </div>
       </section>
@@ -127,7 +128,7 @@
                   <label class="label">
                     <input class="input" type="radio" value="winter" name="season" checked>
                     <span class="radio"></span>
-                    <span class="label__name">Winter</span>
+                    <span class="label__name label__name--active">Winter</span>
                   </label>
                 </div>
                 <div class="input__box">
@@ -159,7 +160,7 @@
                   <span class="tab-item__span">Staff Picks</span>
                   <h3 class="tab-item__title">
                     <span class="tab-item__title-span">The Book Eaters</span>
-                    By Sunyi Dean
+                    <span class="tab-item__title-Author">By Sunyi Dean</span>
                   </h3>
                   <p class="tab-item__text">An unusual sci-fi story about a book eater woman who tries desperately to
                     save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional
@@ -174,7 +175,7 @@
                   <span class="tab-item__span">Staff Picks</span>
                   <h3 class="tab-item__title">
                     <span class="tab-item__title-span">Cackle</span>
-                    By Rachel Harrison
+                    <span class="tab-item__title-Author">By Rachel Harrison</span>
                   </h3>
                   <p class="tab-item__text">Are your Halloween movies of choice The Witches of Eastwick and Practical
                     Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in
@@ -189,7 +190,7 @@
                   <span class="tab-item__span">Staff Picks</span>
                   <h3 class="tab-item__title">
                     <span class="tab-item__title-span">Dante: Poet of the Secular World</span>
-                    By Erich Auerbach
+                    <span class="tab-item__title-Author">By Erich Auerbach</span>
                   </h3>
                   <p class="tab-item__text">Auerbach's engaging book places the 'Comedy' within the tradition of epic,
                     tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual
@@ -205,12 +206,12 @@
                   <span class="tab-item__span">Staff Picks</span>
                   <h3 class="tab-item__title">
                     <span class="tab-item__title-span">The Last Queen</span>
-                    By Clive Irving
+                    <span class="tab-item__title-Author">By Clive Irving</span>
                   </h3>
                   <p class="tab-item__text">A timely and revelatory new biography of Queen Elizabeth (and her family)
                     exploring how the Windsors have evolved and thrived as the modern world has changed around them.
                   </p>
-                  <button class="item-tab tab-item__btn tab-item__btn--disabled" disabled>Own</button>
+                  <button class="item-tab tab-item__btn">Buy</button>
                   <div class="tab-item__img-box">
                     <img class="tab-item__img" src="assets/images/winter/4.jpg" alt="The Last Queen">
                   </div>
@@ -221,7 +222,7 @@
                   <span class="tab-item__span">Staff Picks</span>
                   <h3 class="tab-item__title">
                     <span class="tab-item__title-span">The Body</span>
-                    By Stephen King
+                    <span class="tab-item__title-Author">By Stephen King</span>
                   </h3>
                   <p class="tab-item__text">Powerful novel that takes you back to a nostalgic time, exploring both the
                     beauty and danger and loss of innocence that is youth.
@@ -235,7 +236,7 @@
                   <span class="tab-item__span">Staff Picks</span>
                   <h3 class="tab-item__title">
                     <span class="tab-item__title-span">Carry: A Memoir of Survival on Stolen Land</span>
-                    By Toni Jenson
+                    <span class="tab-item__title-Author">By Toni Jenson</span>
                   </h3>
                   <p class="tab-item__text">This memoir about the author's relationship with gun violence feels both
                     expansive and intimate, resulting in a lyrical indictment of the way things are.
@@ -250,7 +251,7 @@
                   <span class="tab-item__span">Staff Picks</span>
                   <h3 class="tab-item__title">
                     <span class="tab-item__title-span">Days of Distraction</span>
-                    By Alexandra Chang
+                    <span class="tab-item__title-Author">BBy Alexandra Chang</span>
                   </h3>
                   <p class="tab-item__text">A sardonic view of Silicon Valley culture, a meditation on race, and a
                     journal of displacement and belonging, all in one form-defying package of spare prose.
@@ -264,7 +265,7 @@
                   <span class="tab-item__span">Staff Picks</span>
                   <h3 class="tab-item__title">
                     <span class="tab-item__title-span">Dominicana</span>
-                    By Angie Cruz
+                    <span class="tab-item__title-Author">By Angie Cruz</span>
                   </h3>
                   <p class="tab-item__text">A fascinating story of a teenage girl who marries a man twice her age with
                     the promise to bring her to America. Her marriage is an opportunity for her family to eventually
@@ -281,7 +282,7 @@
                   <span class="tab-item__span">Staff Picks</span>
                   <h3 class="tab-item__title">
                     <span class="tab-item__title-span">Crude: A Memoir</span>
-                    By Pablo Fajardo & Sophie Tardy-Joubert
+                    <span class="tab-item__title-Author">By Pablo Fajardo & Sophie Tardy-Joubert</span>
                   </h3>
                   <p class="tab-item__text">Drawing and color by Damien Roudeau | This book illustrates the struggles of
                     a group of indigenous Ecuadoreans as they try to sue the ChevronTexaco company for damage their oil
@@ -289,14 +290,14 @@
                   </p>
                   <button class="tab-item__btn">Buy</button>
                   <div class="tab-item__img-box">
-                    <img class="tab-item__img" src="assets/images/spring/1.jpg" alt="Crude: A Memoir">
+                    <img class="tab-item__img" src="assets/images/summer/1.jpg" alt="Crude: A Memoir">
                   </div>
                 </div>
                 <div class="tab__item tab-item">
                   <span class="tab-item__span">Staff Picks</span>
                   <h3 class="tab-item__title">
                     <span class="tab-item__title-span">Let My People Go Surfing</span>
-                    By Yvon Chouinard
+                    <span class="tab-item__title-Author">By Yvon Chouinard</span>
                   </h3>
                   <p class="tab-item__text">Chouinard—climber, businessman, environmentalist—shares tales of courage and
                     persistence from his experience of founding and leading Patagonia, Inc. Full title: Let My People Go
@@ -304,14 +305,14 @@
                   </p>
                   <button class="tab-item__btn">Buy</button>
                   <div class="tab-item__img-box">
-                    <img class="tab-item__img" src="assets/images/spring/2.jpg" alt="Let My People Go Surfing">
+                    <img class="tab-item__img" src="assets/images/summer/2.jpg" alt="Let My People Go Surfing">
                   </div>
                 </div>
                 <div class="tab__item tab-item">
                   <span class="tab-item__span">Staff Picks</span>
                   <h3 class="tab-item__title">
                     <span class="tab-item__title-span">The Octopus Museum: Poems</span>
-                    By Brenda Shaughnessy
+                    <span class="tab-item__title-Author">By Brenda Shaughnessy</span>
                   </h3>
                   <p class="tab-item__text">This collection of bold and scathingly beautiful feminist poems imagines
                     what comes after our current age of environmental destruction, racism, sexism, and divisive
@@ -319,14 +320,14 @@
                   </p>
                   <button class="tab-item__btn">Buy</button>
                   <div class="tab-item__img-box">
-                    <img class="tab-item__img" src="assets/images/spring/3.jpg" alt="The Octopus Museum: Poems">
+                    <img class="tab-item__img" src="assets/images/summer/3.jpg" alt="The Octopus Museum: Poems">
                   </div>
                 </div>
                 <div class="tab__item tab-item">
                   <span class="tab-item__span">Staff Picks</span>
                   <h3 class="tab-item__title">
                     <span class="tab-item__title-span">Shark Dialogues: A Novel</span>
-                    By Kiana Davenport
+                    <span class="tab-item__title-Author">By Kiana Davenport</span>
                   </h3>
                   <p class="tab-item__text">An epic saga of seven generations of one family encompasses the tumultuous
                     history of Hawaii as a Hawaiian woman gathers her four granddaughters together in an erotic tale of
@@ -334,18 +335,18 @@
                   </p>
                   <button class="tab-item__btn">Buy</button>
                   <div class="tab-item__img-box">
-                    <img class="tab-item__img" src="assets/images/spring/4.jpg" alt="Shark Dialogues: A Novel">
+                    <img class="tab-item__img" src="assets/images/summer/4.jpg" alt="Shark Dialogues: A Novel">
                   </div>
                 </div>
-  
+
               </div>
               <div class="tab__items" id="autumn-tab">
-  
+
                 <div class="tab__item tab-item">
                   <span class="tab-item__span">Staff Picks</span>
                   <h3 class="tab-item__title">
                     <span class="tab-item__title-span">Casual Conversation</span>
-                    By Renia White
+                    <span class="tab-item__title-Author">By Renia White</span>
                   </h3>
                   <p class="tab-item__text">White's impressive debut collection takes readers through and beyond the
                     concepts of conversation and the casual - both what we say to each other and what we don't,
@@ -353,14 +354,14 @@
                   </p>
                   <button class="tab-item__btn">Buy</button>
                   <div class="tab-item__img-box">
-                    <img class="tab-item__img" src="assets/images/spring/1.jpg" alt="Casual Conversation">
+                    <img class="tab-item__img" src="assets/images/autumn/1.jpg" alt="Casual Conversation">
                   </div>
                 </div>
                 <div class="tab__item tab-item">
                   <span class="tab-item__span">Staff Picks</span>
                   <h3 class="tab-item__title">
                     <span class="tab-item__title-span">The Great Fire</span>
-                    By Lou Ureneck
+                    <span class="tab-item__title-Author">By Lou Ureneck</span>
                   </h3>
                   <p class="tab-item__text">The harrowing story of an ordinary American and a principled Naval officer
                     who, horrified by the burning of Smyrna, led an extraordinary rescue effort that saved a quarter of
@@ -368,14 +369,14 @@
                   </p>
                   <button class="tab-item__btn">Buy</button>
                   <div class="tab-item__img-box">
-                    <img class="tab-item__img" src="assets/images/spring/2.jpg" alt="The Great Fire">
+                    <img class="tab-item__img" src="assets/images/autumn/2.jpg" alt="The Great Fire">
                   </div>
                 </div>
                 <div class="tab__item tab-item">
                   <span class="tab-item__span">Staff Picks</span>
                   <h3 class="tab-item__title">
-                    <span class="tab-item__title-span">Rickey: The Life and Legend</span>
-                    By Howard Bryant
+                    <span class="tab-item__title-span">Rickey: The Life and Legend </span> 
+                    <span class="tab-item__title-Author">By Howard Bryant</span>
                   </h3>
                   <p class="tab-item__text">With the fall rolling around, one can't help but think of baseball's
                     postseason coming up! And what better way to prepare for it than reading the biography of one of the
@@ -383,14 +384,14 @@
                   </p>
                   <button class="tab-item__btn">Buy</button>
                   <div class="tab-item__img-box">
-                    <img class="tab-item__img" src="assets/images/spring/3.jpg" alt="Rickey: The Life and Legend">
+                    <img class="tab-item__img" src="assets/images/autumn/3.jpg" alt="Rickey: The Life and Legend">
                   </div>
                 </div>
                 <div class="tab__item tab-item">
                   <span class="tab-item__span">Staff Picks</span>
                   <h3 class="tab-item__title">
-                    <span class="tab-item__title-span">Slug: And Other Stories</span>
-                    By Megan Milks
+                    <span class="tab-item__title-span">Slug: And Other Stories </span>
+                    <span class="tab-item__title-Author">By Megan Milks</span>
                   </h3>
                   <p class="tab-item__text">Exes Tegan and Sara find themselves chained together by hairballs of
                     codependency. A father and child experience the shared trauma of giving birth to gods from their
@@ -398,7 +399,7 @@
                   </p>
                   <button class="tab-item__btn">Buy</button>
                   <div class="tab-item__img-box">
-                    <img class="tab-item__img" src="assets/images/spring/4.jpg" alt="Slug: And Other Stories">
+                    <img class="tab-item__img" src="assets/images/autumn/4.jpg" alt="Slug: And Other Stories">
                   </div>
                 </div>
               </div>
@@ -534,10 +535,13 @@
               <form class="card__holder-form holder">
                 <div class="holder__inner">
                   <h3 class="holder__title">Brooklyn Public Library</h3>
-                  <input class="holder__input" type="text" placeholder="Reader's name" pattern="[A-Za-z\s]+$" required>
-                  <input class="holder__input" type="text" placeholder="Card number" pattern="[0-9-\s]+$" required>
+                  <!-- pattern="[A-Za-z\s]+$" pattern="[0-9-\s]+$"-->
+                  <input class="holder__input holder__input-name" type="text" placeholder="Reader's name" required>
+                  <input class="holder__input holder__input-card" type="text" placeholder="Card number" required>
                 </div>
-                <button class="holder__btn" type="submit">Check the card</button>
+                <div class="card__holder-btn">
+                  <button class="holder__btn" type="submit">Check the card</button>
+                </div>
               </form>
             </div>
             <div class="card__column">
@@ -545,8 +549,8 @@
               <p class="card__text">You will be able to see a reader card after logging into account or you can register
                 a new account</p>
               <div class="card__auth-box">
-                <button class="card__auth">Sign Up</button>
-                <button class="card__auth">Log in</button>
+                <button class=" card__auth card__auth-signUp">Sign Up</button>
+                <button class=" card__auth card__auth-logIn">Log in</button>
               </div>
             </div>
           </div>
@@ -593,70 +597,142 @@
       </div>
     </footer>
     <div class="overlay hide"></div>
-    <div class="popup-auth">
+    <div class="popup-auth" data-modal>
       <div class="popup-auth__inner">
         <div class="popup-auth__content">
           <h5 class="popup-auth__title">Profile</h5>
-          <a class="popup-auth__link" href="#">Log In</a>
-          <a class="popup-auth__link" href="#">Register</a>
+          <a class="popup-auth__link-login" href="#">Log In</a>
+          <a class="popup-auth__link-register" href="#" >Register</a>
         </div>
       </div>
     </div>
-    <div class="popup-profile">
-      <div class="popup-profile__inner">
-        <div class="popup-profile__content">
-          <span class="popup-profile__close"></span>
-          <div class="popup-profile__column">
-            <img class="popup-profile__img" src="assets/images/avatar.jpg" alt="JD">
-            <p class="popup-profile__name">John Doe</p>
+    <div class="popup-login" data-modal>
+      <div class="popup-login__inner">
+        <div class="popup-login__close">
+          <img class="popup-login__close-img" src="assets/icons/close.svg" alt="close button">
+        </div>
+        <div class="popup-login__content">
+          <div class="popup-login__title">Login</div>
+          <form action="#" class="popup-login__form">
+            <label class="popup-login__label">E-mail or readers card
+              <input type="text" class="popup-login__input" data-login="true" id="login">
+              <p class="input__error">This field is required</p>
+            </label>
+            <label class="popup-login__label">Password
+              <input type="text" class="popup-login__input" data-maxlength="8" id="passwordAuth">
+              <p class="input__error">Password should be minimum 8 characters</p>
+            </label>
+            <button class="popup-login__btn" type="submit">Log In</button>
+          </form>
+          <div class="popup-login__register-box">
+            <div class="popup-login__question">Don't have an account?</div>
+            <a href="#" class="popup-login__link">Register</a>
           </div>
-          <div class="popup-profile__column">
-            <h3 class="popup-profile__title">My profile</h3>
-            <div class="popup-profile__stat">
-              <div class="popup-profile__visits">
-                <span>Visits</span>
-                <img src="assets/icons/visits.svg" alt="visits">
-                <span id="visits">23</span>
-              </div>
-              <div class="popup-profile__bonuses">
-                <span>Bonuses</span>
-                <img src="assets/icons/bonuses.svg" alt="bonuses">
-                <span id="bonuses">1240</span>
-              </div>
-              <div class="popup-profile__books">
-                <span>Books</span>
-                <img src="assets/icons/book.svg" alt="books">
-                <span id="books">23</span>
-              </div>
-            </div>
-            <h5 class="popup-profile__subtitle">Rented books</h5>
-            <ul class="popup-profile__list">
-              <li class="popup-profile__item">
-                <a class="popup-profile__link" href="#">
-                  The Last Queen, Clive Irving
-                </a>
-              </li>
-              <li class="popup-profile__item">
-                <a class="popup-profile__link" href="#">
-                  Dominicana, Angie Cruz
-                </a>
-              </li>
-            </ul>
-            <div class="popup-profile__card">
-              Card number
-              <span>F00234030</span>
-              <button class="popup-profile__copy">
-                <img class="popup-profile__copy-img" src="assets/icons/copy.svg" alt="copy image">
-              </button>
-            </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-register" data-modal>
+      <div class="popup-register__inner">
+        <div class="popup-register__close">
+          <img class="popup-register__close-img" src="assets/icons/close.svg" alt="close button">
+        </div>
+        <div class="popup-register__content">
+          <div class="popup-register__title">Register</div>
+          <form action="#" class="popup-register__form">
+            <label class="popup-register__label">First name
+              <input type="text" class="popup-login__input" id="name">
+              <p class="input__error">This field is required</p>
+            </label>
+            <label class="popup-register__label">Last name
+              <input type="text" class="popup-login__input" id="surname">
+              <p class="input__error">This field is required</p>
+            </label>
+            <label class="popup-register__label">E-mail
+              <input type="text" class="popup-login__input" data-email="true" id="email">          
+                <p class="input__error">Type valid email</p>
+            </label>
+            <label class="popup-register__label">Password
+              <input type="password" class="popup-login__input" data-maxlength="8" id="password">
+              <p class="input__error">Password should be minimum 8 characters</p>
+            </label>
+            <button class="popup-register__btn" type="submit">Sign Up</button>
+          </form>
+          <div class="popup-register__register-box">
+            <div class="popup-register__question">Already have an account?</div>
+            <a href="#" class="popup-register__link">Login</a>
           </div>
-  
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup-buy" data-modal>
+    <div class="popup-buy__inner">
+      <div class="popup-buy__content">
+        <div class="popup-buy__close">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 16.8507L17 2" stroke="white" stroke-width="3"/>
+            <path d="M2 2.14929L17 17" stroke="white" stroke-width="3"/>
+            </svg>            
+        </div>
+        <div class="popup-buy__title-box">
+          <h3 class="popup-buy__title">Buy a library card</h3>
+        </div>
+        <div class="popup-buy__columns">
+          <div class="popup-buy__column">
+            <form action="#" class="popup-buy__form">
+              <label class="popup-buy__label">Bank card number
+                <input type="text" class="popup-buy__input" id="card-number" data-length="16" maxlength="16">
+                <p class="input__error">Card number should be equal 8 characters</p>
+              </label>
+              <label class="popup-buy__label">Expiration code
+                <div class="popup-buy__inputs-box">
+                  <input type="text" class="popup-buy__input" id="exp1" data-maxchars="2" maxlength="2">
+                  <p class="input__error">This field should contains 2 digits</p>
+                  <input type="text" class="popup-buy__input" id="exp2" data-maxchars="2" maxlength="2">
+                  <p class="input__error">This field should contains 2 digits</p>
+                </div>
+              </label>
+              <label class="popup-buy__label">CVC
+                <input type="text" class="popup-buy__input" id="cvc" data-cvc="3" maxlength="3">
+                <p class="input__error">This field should contains 3 digits</p>
+              </label>
+              <label class="popup-buy__label">Cardholder name
+                <input type="text" class="popup-buy__input" id="cardholder-name">
+                <p class="input__error">This field is required</p>
+              </label>
+              <label class="popup-buy__label">Postal code
+                <input type="text" class="popup-buy__input" id="postal">
+                <p class="input__error">This field is required</p>
+              </label>
+              <label class="popup-buy__label">City / Town
+                <input type="text" class="popup-buy__input" id="town">
+                <p class="input__error">This field is required</p>
+              </label>
+              <div class="popup-buy__btn-box">
+                <button class="popup-buy__btn" type="submit">Buy</button>
+                <div class="popup-buy__price">
+                  $ <span>25.00</span>
+                </div>
+              </div>
+
+            </form>
+          </div>
+          <div class="popup-buy__column">
+            <p class="popup-buy__desc">
+              If you are live, work, attend school, or pay property taxes in New York State, you can get a $25 digital
+              library card right now using this online form. Visitors to New York State can also use this form to apply
+              for a temporary card.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <script src="js/main.js" type="module"></script>
+
+  </div>
+
+  <script src="js/index.js" type="module"></script>
 </body>
 
 </html>

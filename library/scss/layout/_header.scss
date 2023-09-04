@@ -59,7 +59,7 @@
     padding: 100px 107px;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     z-index: 10;
@@ -128,4 +128,17 @@
   @include media-mobile {
     margin-left: 0;
   }
+}
+
+.user-nav__link-isRegister {
+  color: $color-accent;
+  font-size: 15px;
+  line-height: 133.333%;
+  display: block;
+  padding: 4px;
+  background-color: $color-white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  letter-spacing: 0;
 }
