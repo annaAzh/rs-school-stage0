@@ -53,7 +53,7 @@ const createUserPopup = (shortName, firstName, lastName, visits, books, userNumb
   `;
   element.classList.add('popup-profile');
   document.querySelector('.wrapper').append(element);
-
+  element.setAttribute('data-modal', '');
   arr.forEach(title => {
     const bookElement = document.createElement('li');
     bookElement.innerHTML = `

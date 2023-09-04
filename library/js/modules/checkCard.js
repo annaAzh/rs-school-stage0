@@ -28,7 +28,7 @@ const checkCard = (formSelector, NameSelector, CardSelector, localStorageData) =
           <div class="popup-profile__books">
             <span class="popup-profile__books-span">Books</span>
             <img src="assets/icons/book.svg" alt="books">
-            <span id="books">${localStorageData.books}</span>
+            <span id="books">${localStorageData.countBook}</span>
           </div>
           </div>
         `;

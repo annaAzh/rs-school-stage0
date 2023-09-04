@@ -19,8 +19,6 @@ const validationAuth = (formSelector) => {
         }, 1000);
       }
     }
-
-
   });
 };
 

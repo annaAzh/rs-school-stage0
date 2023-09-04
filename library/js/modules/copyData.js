@@ -7,7 +7,6 @@ const copyData = (btnSelector, dataSelector) => {
   const copyContent = async () => {
     try {
       await navigator.clipboard.writeText(data);
-      console.log(`Content ${data} copied to clipboard`);
     } catch (e) {}
   }
 

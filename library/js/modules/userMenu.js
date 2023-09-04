@@ -10,7 +10,7 @@ const userMenu = () => {
     authPopup.style.top = bottomPoint + 1 + 'px';
     
     if (document.body.clientWidth  <= 484) {
-     authPopup.style.right = rightPoint - widthPopup + trigger.getBoundingClientRect().width + 'px';
+      authPopup.style.right = rightPoint - widthPopup + trigger.getBoundingClientRect().width + 'px';
     } else {
       authPopup.style.right = rightPoint + 'px';
     }

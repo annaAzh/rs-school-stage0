@@ -1077,9 +1077,6 @@ input._error {
   padding: 0;
   transition: all 0.3s ease-in;
 }
-.fieldset.sticky {
-  padding-left: 20px;
-}
 .fieldset.sticky .legend {
   padding-top: 20px;
 }
@@ -1176,7 +1173,7 @@ input._error {
 }
 
 .tab__item {
-  padding: 14px 170px 14px 20px;
+  padding: 14px 10px 14px 20px;
 }
 @media screen and (max-width: 1240px) {
   .tab__item {

@@ -9,7 +9,6 @@ export function validation (formSelector) {
     e.preventDefault();
 
     let error = setFormValidation(this);
-    console.log(error)
   
     form.querySelectorAll('input').forEach(elem => elem.addEventListener('keyup', () => {
       checkCondition(elem);
@@ -22,24 +21,18 @@ export function validation (formSelector) {
     const userId = userID();
     const visit = 1;
     const countBook = 0;
-    const bookList = [{id: 1, book: 'ggggggg'}, {id: 2, book: 'aaaa'}];
+    const bookList = [];
     const hasCard = 'false';
 
 
     if (error !== false) {
-      console.log('error')
     } else {
-      console.log('You are registred');
       setLocalStorage(firstName, lastName, email, password, userId, visit, countBook, bookList, hasCard);
-      console.log(JSON.parse(localStorage.getItem('newLibraryUser')));
       setTimeout(() => {
         cleanForm(form);
       }, 1000);
     }
-
   });
-
-  
 };
 
 export function cleanForm(form) {
@@ -151,7 +144,7 @@ input.parentNode.querySelector('.input__error').classList.remove('input__error-s
 }
 
 
-function setLocalStorage(firstName, lastName, email, password, userId, visit = 1, countBook = 0, bookList=[{id: 1, book: 'ggggggg'}, {id: 2, book: 'aaaa'}], hasCard = 'false') {
+function setLocalStorage(firstName, lastName, email, password, userId, visit = 1, countBook = 0, bookList=[], hasCard = 'false') {
   let user = {
     isRegistred: 'true',
     isAuth: 'true',

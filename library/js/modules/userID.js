@@ -2,7 +2,7 @@ const userID = () => {
   const userNumberArr = [];
   
   const randomNumber = () => {
-    return Math.floor(0 + Math.random() * (255 + 1 - 0)).toString(16);
+    return Math.floor(0 + Math.random() * (255 + 1 - 0)).toString(16).toUpperCase();
   }
 
   while(userNumberArr.length < 10) {
