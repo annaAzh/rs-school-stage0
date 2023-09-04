@@ -4,11 +4,13 @@ const burger = () => {
   const header = document.querySelector('.header-top');
   const menuLink = document.querySelectorAll('.menu__link');
   const overlay = document.querySelector('.overlay');
+  const popups = document.querySelectorAll('[data-modal]');
 
   btn.addEventListener('click', () => {
     header.classList.toggle('header-top--active');
     document.body.classList.toggle('noscroll');
     btn.classList.toggle('burger--active');
+
     if (header.matches('.header-top--active')) {
       overlay.classList.add('shown');
       overlay.classList.remove('hide');
@@ -17,6 +19,12 @@ const burger = () => {
       overlay.classList.add('hide');
     }
 
+    //then open popup => other should be closed
+    popups.forEach(elem => {
+      elem.classList.remove('user-nav--active');
+      elem.classList.remove('popup--active');
+      document.body.classList.remove('noscroll');
+    })
   });
 
   menuLink.forEach(elem => {

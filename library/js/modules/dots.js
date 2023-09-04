@@ -17,8 +17,11 @@ const changeDots = () => {
       dots[3].style.display = 'none';
     }
   }
+  changeDots();
 
-  window.addEventListener('resize', changeDots);
+  if (window.addEventListener('resize', changeDots)) {
+    changeDots();
+  }
 
 };
 
