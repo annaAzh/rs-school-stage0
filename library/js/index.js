@@ -6,9 +6,9 @@ import stickyTab from "./modules/stickyTab.js";
 import userMenu from "./modules/userMenu.js";
 import userState from "./modules/userState.js";
 
-window.addEventListener('resize', () => {
-  window.location.reload();
-});
+// window.addEventListener('resize', () => {
+//   window.location.reload();
+// });
 
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';

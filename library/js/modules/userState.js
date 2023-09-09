@@ -41,7 +41,7 @@ const userState = () => {
     profilePopup.innerHTML = `<div class="popup-auth__inner">
     <div class="popup-auth__content">
       <h5 class="popup-auth__title">${key.userID}</h5>
-      <a class="popup-auth__link-login popup-auth__link-profile" href="#">My profile</a>
+      <a class="popup-auth__link-profile" href="#">My profile</a>
       <a class="popup-auth__link-logout" href="#">Log Out</a>
     </div>
     </div>`;

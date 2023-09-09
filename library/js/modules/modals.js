@@ -10,16 +10,29 @@ const modals = (triggerSelector, modalSelector, closeSelector, active) => {
     elem.addEventListener('click', (e) => {
     if (e.target) {
       e.preventDefault();
-      userMenu();
-      
+      if (e.target.classList.contains('popup-auth__link-profile')) {
+        e.stopPropagation();
+        document.querySelector('.popup-auth').classList.remove('user-nav--active');
+      }
+      userMenu(); 
     }
     //then open popup => other should be closed
     popups.forEach(elem => {
-      elem.classList.remove(active);
-      document.body.classList.remove('noscroll');
-      //close burdger
-      document.querySelector('.header-top').classList.remove('header-top--active');
-      document.querySelector('.burger').classList.remove('burger--active');
+      if (elem.classList.contains('user-nav--active')) {
+        elem.classList.remove('user-nav--active');
+        document.body.classList.remove('noscroll');
+      }
+      if (elem.classList.contains('popup--active')) {
+        elem.classList.remove('popup--active');
+        document.body.classList.remove('noscroll');
+      }
+
+      if (document.querySelector('.header-top').classList.contains('header-top--active')) {
+        document.querySelector('.header-top').classList.remove('header-top--active');
+        document.querySelector('.burger').classList.remove('burger--active');
+        document.body.classList.remove('noscroll');
+      }
+
     })
 
     modal.classList.add(active);
