@@ -23,6 +23,7 @@ const checkBookList = (localStorageData) => {
       localStorageData['bookList'].push(newBook);
       localStorage.setItem('newLibraryUser', JSON.stringify(localStorageData));
       userMenu();
+      location.reload();
   } else {
     return;
   }

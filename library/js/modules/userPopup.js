@@ -38,8 +38,10 @@ const createUserPopup = (shortName, firstName, lastName, visits, books, userNumb
       </div>
     </div>
     <h5 class="popup-profile__subtitle">Rented books</h5>
+    <div class="popup-profile__scroll">
     <ul class="popup-profile__list">
     </ul>
+    </div>
     <div class="popup-profile__card">
       Card number
       <span class="popup-profile__card-number">${userNumber}</span>
