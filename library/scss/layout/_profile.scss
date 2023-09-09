@@ -146,9 +146,9 @@ span.popup-profile__books-span {
   margin-bottom: 30px;
 }
 
-ul.popup-profile__list {
-  margin-bottom: 30px;
-}
+// ul.popup-profile__list {
+//   margin-bottom: 30px;
+// }
 
 .popup-profile__link {
   color: $color-primary;
@@ -185,4 +185,9 @@ ul.popup-profile__list {
 .popup-profile__copy-img {
   width: 13px;
   height: 12px;
+}
+
+.popup-profile__scroll {
+  overflow-y: scroll;
+  margin-bottom: 30px;
 }

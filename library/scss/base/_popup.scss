@@ -60,7 +60,8 @@
   }
 }
 
-.popup-auth__link-login {
+.popup-auth__link-login,
+.popup-auth__link-profile {
   display: block;
   letter-spacing: normal;
   @extend %inter-400;
@@ -75,6 +76,11 @@
   &:hover {
     color: $color-accent;
   }
+}
+
+.popup-auth__link-profile{
+  letter-spacing: 0;
+  margin-bottom: 10px;
 }
 
 .popup-auth__link-login-register,
@@ -338,7 +344,6 @@
 
 .popup-profile__list {
   max-height: 80px;
-  overflow: scroll;
 }
 
 .popup-profile__item {

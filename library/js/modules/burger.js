@@ -8,7 +8,7 @@ const burger = () => {
 
   btn.addEventListener('click', () => {
     header.classList.toggle('header-top--active');
-    document.body.classList.toggle('noscroll');
+    document.body.classList.add('noscroll');
     btn.classList.toggle('burger--active');
 
     if (header.matches('.header-top--active')) {
@@ -21,10 +21,17 @@ const burger = () => {
 
     //then open popup => other should be closed
     popups.forEach(elem => {
-      elem.classList.remove('user-nav--active');
-      elem.classList.remove('popup--active');
-      document.body.classList.remove('noscroll');
+      console.log(elem)
+      if (elem.classList.contains('user-nav--active')) {
+        elem.classList.remove('user-nav--active');
+        document.body.classList.remove('noscroll');
+      }
+      if (elem.classList.contains('popup--active')) {
+        elem.classList.remove('popup--active');
+        document.body.classList.remove('noscroll');
+      }  
     })
+    document.querySelector('.popup-profile').classList.remove('popup--active');
   });
 
   menuLink.forEach(elem => {
