@@ -26,13 +26,15 @@ const btnPlay = document.querySelector('.play__img');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 const cover = document.querySelector('.player__img');
+const artist = document.querySelector('.player__title-author');
+const songTitle = document.querySelector('.player__title-sound');
+
 const audio = document.querySelector('audio');
 
 let isPlay = false;
 let count = 0;
 
-audio.src = data[count].song;
-cover.src = data[count].img;
+audioInfo();
 
 btnPlay.addEventListener('click', () => {
   if (!isPlay) {
@@ -40,11 +42,17 @@ btnPlay.addEventListener('click', () => {
   } else {
     pauseAudio();
   }
-})
+});
 
-function playAudio () {
+function audioInfo() {
   audio.src = data[count].song;
   cover.src = data[count].img;
+  artist.textContent = data[count].author;
+  songTitle.textContent = data[count].title;
+}
+
+function playAudio () {
+  audioInfo();
   audio.play();
   isPlay = true;
   btnPlay.src = 'assets/icons/pause.svg';
