@@ -33,6 +33,9 @@ const inputDuration = document.querySelector('.progress-bar__range');
 const currentTime = document.querySelector('.progress-bar__current-time');
 const fullTime = document.querySelector('.progress-bar__full-time');
 
+const volumeRange = document.querySelector('.progress-bar__range-volume');
+const volumeImg = document.querySelector('.progress-bar__range-img');
+
 const audio = document.createElement('audio');
 audio.classList.add('audio__track');
 document.querySelector('.audio-box').prepend(audio);
@@ -137,3 +140,44 @@ function playPrev () {
   audioInfo();
   playAudio();
 }
+
+
+volumeImg.src = 'assets/icons/low-volume.svg';
+let isVolume = true;
+
+volumeRange.addEventListener('click', (e) => {
+  let rangeValue = volumeRange.clientWidth;
+  let clickedOffset = e.offsetX;
+
+  if (clickedOffset < 0) {
+    clickedOffset = 0;
+   } else if (clickedOffset > 100){
+    clickedOffset = 100;
+  }
+
+  if (volumeRange.value <= 0) {
+    volumeImg.src = 'assets/icons/volume-off.svg';
+  } else if (volumeRange.value > 0 && volumeRange.value < 50) {
+    volumeImg.src = 'assets/icons/low-volume.svg';
+  } else if (volumeRange.value >= 50) {
+    volumeImg.src = 'assets/icons/volume.svg';
+  }
+
+  audio.volume = (clickedOffset / rangeValue);
+});
+
+volumeImg.addEventListener('click', () => {
+  if (isVolume === true) {
+    isVolume = false;
+    volumeImg.src = 'assets/icons/volume-off.svg';
+    audio.volume = 0;
+  } else {
+    isVolume = true;
+    if (volumeRange.value > 0 &&   volumeRange.value <= 50) {
+      volumeImg.src = 'assets/icons/low-volume.svg';
+    } else {
+      volumeImg.src = 'assets/icons/volume.svg';
+    }
+    audio.volume = volumeRange.value / 100 ;
+  }
+});
