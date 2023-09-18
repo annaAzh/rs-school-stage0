@@ -29,12 +29,37 @@ const cover = document.querySelector('.player__img');
 const artist = document.querySelector('.player__title-author');
 const songTitle = document.querySelector('.player__title-sound');
 
-const audio = document.querySelector('audio');
+const inputDuration = document.querySelector('.progress-bar__range');
+const currentTime = document.querySelector('.progress-bar__current-time');
+const fullTime = document.querySelector('.progress-bar__full-time');
+
+const audio = document.createElement('audio');
+audio.classList.add('audio__track');
+document.querySelector('.audio-box').prepend(audio);
 
 let isPlay = false;
 let count = 0;
 
 audioInfo();
+currentTime.textContent = '00:00';
+
+audio.addEventListener('loadeddata', () => {
+  const fullAudioTime = audio.duration;
+  let fullMinutes = Math.floor(fullAudioTime / 60);
+  let fullSeconds = Math.floor(fullAudioTime  - fullMinutes * 60);
+
+  fullTime.textContent =`${addZero(fullMinutes)}:${addZero(fullSeconds)}`; 
+});
+
+audio.addEventListener('ended', playNext);
+
+inputDuration.addEventListener('click', (e) => {
+  let rangeValue = inputDuration.clientWidth;
+  let clickedOffset = e.offsetX;
+  let audioDuration = audio.duration;
+
+  audio.currentTime = (clickedOffset / rangeValue) * audioDuration;
+});
 
 btnPlay.addEventListener('click', () => {
   if (!isPlay) {
@@ -51,8 +76,33 @@ function audioInfo() {
   songTitle.textContent = data[count].title;
 }
 
+audio.addEventListener('timeupdate', (e) => {
+  if (!isNaN(audio.duration)) {
+    const currentAudioTime = e.target.currentTime;
+    const fullAudioTime = e.target.duration;
+    let progressWidth = (currentAudioTime / fullAudioTime) * 100;
+    inputDuration.value = progressWidth;
+  
+    let currentMinutes = Math.floor(currentAudioTime / 60);
+    let currentSeconds = Math.floor(currentAudioTime  - currentMinutes * 60);
+  
+    let fullMinutes = Math.floor(fullAudioTime / 60);
+    let fullSeconds = Math.floor(fullAudioTime  - fullMinutes * 60);
+  
+    currentTime.textContent =`${addZero(currentMinutes)}:${addZero(currentSeconds)}`;
+    fullTime.textContent =`${addZero(fullMinutes)}:${addZero(fullSeconds)}`; 
+  }
+})
+
+function addZero(num) {
+  if (num < 10) {
+    return num = `0${num}`;
+  } else {
+    return num;
+  }
+}
+
 function playAudio () {
-  audioInfo();
   audio.play();
   isPlay = true;
   btnPlay.src = 'assets/icons/pause.svg';
@@ -74,6 +124,7 @@ function playNext () {
   } else {
     count = 0;
   }
+  audioInfo();
   playAudio();
 }
 
@@ -83,5 +134,6 @@ function playPrev () {
   } else {
     count = data.length - 1;
   }
+  audioInfo();
   playAudio();
 }

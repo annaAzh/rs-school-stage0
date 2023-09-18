@@ -120,6 +120,7 @@ body {
   border-radius: 15px;
   box-shadow: inset 0 0 5px rgba(208, 193, 245, 1);
   overflow: hidden;
+  cursor: pointer;
 }
 
 .progress-bar__range::-webkit-slider-thumb {
