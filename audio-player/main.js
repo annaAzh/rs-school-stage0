@@ -44,6 +44,7 @@ let isPlay = false;
 let count = 0;
 
 audioInfo();
+
 currentTime.textContent = '00:00';
 
 audio.addEventListener('loadeddata', () => {
@@ -67,6 +68,7 @@ inputDuration.addEventListener('click', (e) => {
 btnPlay.addEventListener('click', () => {
   if (!isPlay) {
     playAudio();
+    playSongList()
   } else {
     pauseAudio();
   }
@@ -129,6 +131,7 @@ function playNext () {
   }
   audioInfo();
   playAudio();
+  playSongList();
 }
 
 function playPrev () {
@@ -139,6 +142,7 @@ function playPrev () {
   }
   audioInfo();
   playAudio();
+  playSongList();
 }
 
 
@@ -181,3 +185,75 @@ volumeImg.addEventListener('click', () => {
     audio.volume = volumeRange.value / 100 ;
   }
 });
+
+
+const listBtn = document.querySelector('.player__songs-btn');
+const closeListBtn = document.querySelector('.songs__close');
+const songList = document.querySelector('.songs__list');
+
+listBtn.addEventListener('click', () => {
+  document.querySelector('.songs').classList.remove('hide');
+  document.querySelector('.songs').classList.add('songs-show');
+});
+
+closeListBtn.addEventListener('click', () => {
+  document.querySelector('.songs').classList.remove('songs-show');
+  document.querySelector('.songs').classList.add('hide');
+});
+
+
+const play = `<svg class="songs__item-play-img" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.0298 13.2304C20.3234 12.4806 20.3234 10.5245 19.0298 9.77411L7.78093 3.24762C6.53067 2.52333 5 3.47468 5 4.97608V18.0242C5 19.5256 6.53009 20.4769 7.77978 19.752L19.0298 13.2304Z" fill="white"/></svg>`;
+const pause = `<svg class="songs__item-play-img" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.625 2C8.32119 2 8.98887 2.35119 9.48116 2.97631C9.97344 3.60143 10.25 4.44928 10.25 5.33333V18.6667C10.25 19.5507 9.97344 20.3986 9.48116 21.0237C8.98887 21.6488 8.32119 22 7.625 22C6.92881 22 6.26113 21.6488 5.76884 21.0237C5.27656 20.3986 5 19.5507 5 18.6667V5.33333C5 4.44928 5.27656 3.60143 5.76884 2.97631C6.26113 2.35119 6.92881 2 7.625 2ZM16.375 2C17.0712 2 17.7389 2.35119 18.2312 2.97631C18.7234 3.60143 19 4.44928 19 5.33333V18.6667C19 19.5507 18.7234 20.3986 18.2312 21.0237C17.7389 21.6488 17.0712 22 16.375 22C15.6788 22 15.0111 21.6488 14.5188 21.0237C14.0266 20.3986 13.75 19.5507 13.75 18.6667V5.33333C13.75 4.44928 14.0266 3.60143 14.5188 2.97631C15.0111 2.35119 15.6788 2 16.375 2Z" fill="white"/>
+</svg>
+`;
+
+
+function setSongList (play) {
+  for (let i = 0; i < data.length; i++) {
+    const element = document.createElement('li');
+    element.innerHTML = `
+      <img  class="songs__item-img" src=${data[i].img} alt=${data[i].title}>
+      <div class="song__item-info">
+      <span class="songs__item-artist">${data[i].author}</span>
+      <span class="songs__item-song">${data[i].title}</span>
+      </div>
+      <button class="songs__item-play">
+      ${play}
+      </button>
+      `;
+    element.classList.add('songs__item');
+    element.setAttribute('data-id', `${i}`);
+    songList.prepend(element);
+  }
+}
+setSongList (play);
+
+let songItemBtn = document.querySelectorAll('.songs__item-play');
+let songItem = document.querySelectorAll('.songs__item');
+
+
+function playSongList() {
+  songItem.forEach(li => {
+    li.classList.remove('songs__item--active');
+    li.querySelector('.songs__item-play').innerHTML = `${play}`;
+  });
+  for (let i = 0; i < songItem.length; i++) {
+    if (songItem[i].getAttribute('data-id') == count) {
+      songItem[i].classList.add('songs__item--active');
+      songItem[i].querySelector('.songs__item-play').innerHTML = `${pause}`;
+    }
+  }
+}
+
+
+songItem.forEach(elem => elem.addEventListener('click', () => {
+  
+  count = +elem.getAttribute('data-id');
+
+  audioInfo();
+  playAudio();
+  playSongList();
+
+}));
+
