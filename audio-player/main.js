@@ -71,6 +71,7 @@ btnPlay.addEventListener('click', () => {
     playSongList()
   } else {
     pauseAudio();
+    setPlayBtn();
   }
 });
 
@@ -170,20 +171,28 @@ volumeRange.addEventListener('click', (e) => {
   audio.volume = (clickedOffset / rangeValue);
 });
 
-volumeImg.addEventListener('click', () => {
+volumeImg.addEventListener('change', () => {
   if (isVolume === true) {
     isVolume = false;
     volumeImg.src = 'assets/icons/volume-off.svg';
     audio.volume = 0;
   } else {
     isVolume = true;
-    if (volumeRange.value > 0 &&   volumeRange.value <= 50) {
+    if (volumeRange.value > 0 && volumeRange.value <= 50) {
       volumeImg.src = 'assets/icons/low-volume.svg';
     } else {
       volumeImg.src = 'assets/icons/volume.svg';
     }
-    audio.volume = volumeRange.value / 100 ;
+    setVolume();
   }
+});
+
+function setVolume() {
+  audio.volume = volumeRange.value / 100;
+}
+
+volumeRange.addEventListener('mousemove', () => {
+  setVolume();
 });
 
 
@@ -209,7 +218,7 @@ const pause = `<svg class="songs__item-play-img" width="24" height="24" viewBox=
 `;
 
 
-function setSongList (play) {
+function setSongList(play) {
   for (let i = 0; i < data.length; i++) {
     const element = document.createElement('li');
     element.innerHTML = `
@@ -227,7 +236,7 @@ function setSongList (play) {
     songList.prepend(element);
   }
 }
-setSongList (play);
+setSongList(play);
 
 let songItemBtn = document.querySelectorAll('.songs__item-play');
 let songItem = document.querySelectorAll('.songs__item');
@@ -247,13 +256,20 @@ function playSongList() {
 }
 
 
-songItem.forEach(elem => elem.addEventListener('click', () => {
-  
-  count = +elem.getAttribute('data-id');
-
+songItem.forEach(elem => elem.addEventListener('click', (e) => {
+  if (+e.currentTarget.getAttribute('data-id') === count && isPlay === true) {
+    pauseAudio();
+    setPlayBtn();
+  } else {
+  count = +e.currentTarget.getAttribute('data-id');
+  playSongList();
   audioInfo();
   playAudio();
-  playSongList();
-
+  }
 }));
 
+function setPlayBtn() {
+  songItem.forEach(li => {
+    li.querySelector('.songs__item-play').innerHTML = `${play}`;
+  });
+}
