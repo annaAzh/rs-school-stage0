@@ -164,16 +164,7 @@ function playPrev () {
 volumeImg.src = 'assets/icons/low-volume.svg';
 let isVolume = true;
 
-volumeRange.addEventListener('click', (e) => {
-  let rangeValue = volumeRange.clientWidth;
-  let clickedOffset = e.offsetX;
-
-  if (clickedOffset < 0) {
-    clickedOffset = 0;
-   } else if (clickedOffset > 100){
-    clickedOffset = 100;
-  }
-
+volumeRange.addEventListener('change', () => {
   if (volumeRange.value <= 0) {
     volumeImg.src = 'assets/icons/volume-off.svg';
   } else if (volumeRange.value > 0 && volumeRange.value < 50) {
@@ -181,11 +172,11 @@ volumeRange.addEventListener('click', (e) => {
   } else if (volumeRange.value >= 50) {
     volumeImg.src = 'assets/icons/volume.svg';
   }
-
-  audio.volume = (clickedOffset / rangeValue);
+  
+  setVolume();
 });
 
-volumeImg.addEventListener('change', () => {
+volumeImg.addEventListener('click', () => {
   if (isVolume === true) {
     isVolume = false;
     volumeImg.src = 'assets/icons/volume-off.svg';
@@ -204,10 +195,6 @@ volumeImg.addEventListener('change', () => {
 function setVolume() {
   audio.volume = volumeRange.value / 100;
 }
-
-volumeRange.addEventListener('mousemove', () => {
-  setVolume();
-});
 
 
 const listBtn = document.querySelector('.player__songs-btn');
