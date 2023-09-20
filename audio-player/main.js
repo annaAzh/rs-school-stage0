@@ -20,6 +20,20 @@ const data = [
     img: 'assets/cover/3.jpg',
     song: 'assets/songs/03.mp3'
   },
+  {
+    id: 3,
+    title: 'Deep Forest',
+    author: 'Marga Sol',
+    img: 'assets/cover/4.jpg',
+    song: 'assets/songs/04.mp3'
+  },
+  {
+    id: 4,
+    title: 'Infinite Beauty',
+    author: 'Michael e',
+    img: 'assets/cover/5.jpg',
+    song: 'assets/songs/05.mp3'
+  },
 ];
 
 const btnPlay = document.querySelector('.play__img');
@@ -219,7 +233,7 @@ const pause = `<svg class="songs__item-play-img" width="24" height="24" viewBox=
 
 
 function setSongList(play) {
-  for (let i = 0; i < data.length; i++) {
+  for (let i = data.length - 1; i >= 0; i--) {
     const element = document.createElement('li');
     element.innerHTML = `
       <img  class="songs__item-img" src=${data[i].img} alt=${data[i].title}>
