@@ -16,7 +16,13 @@
       <div class="container">
         <div class="gallery-search__inner">
           <h1 class="gallery-search__title">Image gallery</h1>
-          <input type="text" class="image-search__input" placeholder="let's find some beautiful pictures...">
+          <label class="gallery-search__label">
+            <input type="text" class="image-search__input" placeholder="let's find some beautiful pictures..." autocomplete="off">
+            <svg class="gallery-search__clean-btn" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="1" y="10" width="14" height="2" rx="1" transform="rotate(-45 1 10)" fill="#BA7894"/>
+              <rect x="2" width="14" height="2" rx="1" transform="rotate(45 2 0)" fill="#BA7894"/>
+              </svg>
+          </label>     
         </div>
       </div>
     </section>
@@ -24,33 +30,6 @@
       <div class="container">
         <div class="gallery-images__inner">
           <ul class="gallery-images__list">
-            <!-- <li class="gallery-images__item">
-              <img class="gallery-images__img" src="assets/images/1.jpg" alt="image">
-            </li>
-            <li class="gallery-images__item">
-              <img class="gallery-images__img" src="assets/images/2.jpg" alt="image">
-            </li>
-            <li class="gallery-images__item">
-              <img class="gallery-images__img" src="assets/images/3.jpg" alt="image">
-            </li>
-            <li class="gallery-images__item">
-              <img class="gallery-images__img" src="assets/images/4.jpg" alt="image">
-            </li>
-            <li class="gallery-images__item">
-              <img class="gallery-images__img" src="assets/images/6.jpg" alt="image">
-            </li>
-            <li class="gallery-images__item">
-              <img class="gallery-images__img" src="assets/images/8.jpg" alt="image">
-            </li>
-            <li class="gallery-images__item">
-              <img class="gallery-images__img" src="assets/images/7.jpg" alt="image">
-            </li>
-            <li class="gallery-images__item">
-              <img class="gallery-images__img" src="assets/images/5.jpg" alt="image">
-            </li>
-            <li class="gallery-images__item">
-              <img class="gallery-images__img" src="assets/images/9.jpg" alt="image">
-            </li> -->
           </ul>
           <button class="gallery-images__btn">Load more</button>
         </div>

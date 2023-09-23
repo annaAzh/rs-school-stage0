@@ -123,6 +123,26 @@ body {
   letter-spacing: 0.6px;
   color: #6b6863;
 }
+.gallery-search__label {
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+}
+
+.gallery-search__clean-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 18px;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+.gallery-search__clean-btn:hover rect {
+  transition: all 0.3s ease-in;
+  fill: #6b6863;
+}
 
 .gallery-images__inner {
   display: flex;
