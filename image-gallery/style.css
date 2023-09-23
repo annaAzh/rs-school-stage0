@@ -131,7 +131,7 @@ body {
 }
 
 .gallery-images__list {
-  columns: 3 300px;
+  columns: 4 150px;
   margin-bottom: 40px;
   gap: 14px;
 }
