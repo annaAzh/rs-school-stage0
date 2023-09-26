@@ -10,6 +10,7 @@ let searchKeyWord = null;
 input.focus();
 
 async function requestImage(url) {
+
   const res = await fetch(url);
   if (!res.ok) {
     throw new Error(`Could not fetch ${url}, status: ${res.status}`)
@@ -19,15 +20,12 @@ async function requestImage(url) {
   return data;
 }
 
-let a = requestImage(`${url}photos?page=${pageCount}&per_page=9&client_id=${apiKey}`);
-console.log(a)
-
+requestImage(`${url}photos?page=${pageCount}&per_page=9&client_id=${apiKey}`);
 
 const renderImages = (data) => {
   data.forEach(elem => {
-    createImage(elem.urls.regular);
+    createImage(elem.urls.thumb);
   })
-
 }
 
 const createImage = (src) => {
@@ -40,19 +38,23 @@ const createImage = (src) => {
   return element;
 };
 
-
-const loadMoreImages = () => {
-  pageCount++;
-  searchKeyWord ? requestImage(`${url}search/photos?query=${searchKeyWord}?page=${pageCount}&per_page=9&client_id=${apiKey}`) : requestImage(`${url}photos?page=${pageCount}&per_page=9&client_id=${apiKey}`);
-}
-
 const loadSearchingImages = (e) => {
-  searchKeyWord = e.target.value;
-  pageCount++;
-  document.querySelector('.gallery-images__list').innerHTML = '';
-  requestImage(`${url}search/photos?query=${searchKeyWord}?page=${pageCount}&per_page=9&client_id=${apiKey}`);
+  if (e.currentTarget.classList.contains('image-search__input')) {
+    searchKeyWord = e.target.value;
+    pageCount = 1;
+    console.log(pageCount);
+    document.querySelector('.gallery-images__list').innerHTML = '';
+    requestImage(`${url}search/photos?query=${searchKeyWord}&page=${pageCount}&per_page=9&client_id=${apiKey}`);
+  } else if (searchKeyWord && e.currentTarget.classList.contains('gallery-images__btn')) {
+    pageCount += 1;
+    console.log(pageCount);
+    requestImage(`${url}search/photos?query=${searchKeyWord}&page=${pageCount}&per_page=9&client_id=${apiKey}`);
+  } else {
+    pageCount += 1;
+    console.log(pageCount);
+    requestImage(`${url}photos?page=${pageCount}&per_page=9&client_id=${apiKey}`);
+  }
 }
-
 
 const cleanInput = () => {
   searchKeyWord = null;
@@ -60,5 +62,5 @@ const cleanInput = () => {
 }
 
 input.addEventListener('change', loadSearchingImages);
-btn.addEventListener('click', loadMoreImages);
+btn.addEventListener('click', loadSearchingImages);
 crossBtn.addEventListener('click', cleanInput);
