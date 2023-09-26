@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Image-gallery</title>
+</head>
+<body>
+  <main>
+    <section class="gallery-search">
+      <div class="container">
+        <div class="gallery-search__inner">
+          <h1 class="gallery-search__title">Image gallery</h1>
+          <label class="gallery-search__label">
+            <input type="text" class="image-search__input" placeholder="let's find some beautiful pictures..." autocomplete="off">
+            <svg class="gallery-search__clean-btn" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="1" y="10" width="14" height="2" rx="1" transform="rotate(-45 1 10)" fill="#BA7894"/>
+              <rect x="2" width="14" height="2" rx="1" transform="rotate(45 2 0)" fill="#BA7894"/>
+              </svg>
+          </label>     
+        </div>
+      </div>
+    </section>
+    <section class="gallery-images">
+      <div class="container">
+        <div class="gallery-images__inner">
+          <ul class="gallery-images__list">
+          </ul>
+          <button class="gallery-images__btn">Load more</button>
+        </div>
+        </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="https://github.com/annaAzh" class="footer__github-link">
+          Anna Azherina 
+        </a>
+        <span class="footer__year">@2023</span>
+        <a href="https://rs.school/js-stage0/" class="footer__rsschool-link">
+          <img class="footer__rsschool-img"  src="assets/icons/logo-rs.svg" alt="rsschool">
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
