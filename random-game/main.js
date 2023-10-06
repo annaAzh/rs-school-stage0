@@ -1,14 +1,22 @@
 import data from './data.js';
 import { popup, createPopup, showPopup } from './js/popup.js';
-import increaseAttempts from './js/attempts.js';
+
+const score = document.querySelector('.score');
+let countScore = 0;
+score.textContent = countScore;
+
 
 const field = document.querySelector('.field');
 createPopup()
 showPopup('Start game');
 popup();
 
+let shuffledArray = [];
+function createShuffledArray() {
+  shuffledArray = data.sort(() => Math.random() -0.5);
+}
+createShuffledArray();
 
-const shuffledArray = data.sort(() => Math.random() -0.5);
 for (let i = 0; i < shuffledArray.length; i++) {
   const element = document.createElement('img');
   element.classList.add('card');
@@ -16,6 +24,10 @@ for (let i = 0; i < shuffledArray.length; i++) {
   element.setAttribute('data-id', i);
   element.setAttribute('alt', 'card');
   field.append(element);
+}
+function increaseAttempts() {
+  countScore += 1;
+  score.textContent = countScore;
 }
 
 let openCard = [];
@@ -59,8 +71,21 @@ function checkTwoCards() {
 
 function checkWin() {
   if (playArray.length === 6) {
-    setTimeout(() => {showPopup('You are win!')}, 1000);
+      resetGame();
   } else {
     return;
   }
+}
+
+function resetGame() {
+  setTimeout(() => {
+    showPopup('You are win!');
+    countScore = 0;
+    score.textContent = countScore; 
+    createShuffledArray();
+    showPopup('Start game');
+    openCard = [];
+    cardsName = [];
+    playArray = [];
+  }, 1000);
 }
