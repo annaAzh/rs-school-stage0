@@ -227,7 +227,6 @@ body {
   z-index: 100;
   font-size: 28px;
   line-height: 150%;
-  margin-left: auto;
   position: relative;
   color: #C2B85B;
   border-radius: 30px;
@@ -244,14 +243,6 @@ body {
   box-shadow: 0px 4px 8px 6px rgba(240, 234, 234, 0.21);
 }
 
-/* .table-score__btn:after {
-  content: url(./assets/polygon.svg);
-  position: absolute;
-  width: 13px;
-  height: 12px;
-  top: 0;
-  right: 10px
-} */
 .table-score__list {
   position: absolute;
   top: 50px;
@@ -282,7 +273,7 @@ ul.table-score__list {
   width: 100%;
 }
 .table-score__item {
-  border-bottom: 0.5px solid #C2B85B;;
+  border-bottom: 0.5px solid #C2B85B;
   font-size: 16px;
   display: flex;
 }
@@ -307,4 +298,23 @@ ul.table-score__list {
 .overlay-score.overlay-score--active {
   visibility: visible;
   opacity: 1;
+}
+
+/*--------volume-----------*/
+.volume__btn {
+  margin-left: auto;
+  width: 58px;
+  height: 58px;
+  border: 3px solid #a0bade;
+  background-color: #2b3953;
+  padding: 5px;
+  border-radius: 50%;
+  margin-right: 46px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.volume__btn:hover {
+  border-color: #ffffff;
+  box-shadow: 0px 4px 8px 6px rgba(240, 234, 234, 0.21);
 }

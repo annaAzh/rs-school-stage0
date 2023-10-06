@@ -1,6 +1,10 @@
 import data from './data.js';
 import { popup, createPopup, showPopup } from './js/popup.js';
 import scoreTable from './js/score.js';
+import { createAudio } from './js/audio.js';
+import { setSound } from './js/audio.js';
+
+let isVolume = true;
 
 const score = document.querySelector('.score');
 let countScore = 0;
@@ -11,6 +15,12 @@ const field = document.querySelector('.field');
 createPopup()
 showPopup('Start game');
 popup();
+
+document.querySelector('.overlay').addEventListener('click', (e) => {
+  if (e.target.textContent === 'Start game') {
+    setSound(isVolume);
+  }
+})
 
 function createCards() {
   for (let i = 0; i < data.length; i++) {
