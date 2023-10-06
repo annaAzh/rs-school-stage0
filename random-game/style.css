@@ -95,3 +95,47 @@ body {
   pointer-events: none;
   opacity: 0.9;
 }
+
+/*-----popUp--------*/
+
+
+.popup {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in;
+}
+
+.popup.popup--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 4;
+}
+
+.popup__inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  border: 3px solid #ececec;
+}
+
+.popup__text {
+  font-family: 'VT323', monospace;
+  text-transform: uppercase;
+  color: beige;
+  font-size: 56px;
+  line-height: 150%;
+  text-align: center;
+  margin-bottom: 20px;
+}
