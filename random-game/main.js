@@ -1,9 +1,11 @@
 import data from './data.js';
 import { popup, createPopup, showPopup } from './js/popup.js';
+import scoreTable from './js/score.js';
 
 const score = document.querySelector('.score');
 let countScore = 0;
 score.textContent = countScore;
+scoreTable();
 
 const field = document.querySelector('.field');
 createPopup()
@@ -22,16 +24,14 @@ function createCards() {
 
 createCards()
 const cards = field.querySelectorAll('.card');
-
 let shuffledArray = [];
+let gameResult = [];
 
 function createShuffledArray() {
   shuffledArray = data.sort(() => Math.random() -0.5);
-  console.log(shuffledArray)
   for (let i = 0; i < cards.length; i++) {
     let card = cards[i];
     card.setAttribute('data-id', i);
-    console.log(card)
   }
 }
 createShuffledArray();
@@ -89,6 +89,8 @@ function checkWin() {
 }
 
 function resetGame() {
+  gameResult.push(countScore);
+  setGameResult()
   showPopup('You are win!');
   setTimeout(() => {
     startNewGame()
@@ -108,3 +110,32 @@ function startNewGame() {
     card.src = './assets/image/blank.png';
   })
 }
+
+function setGameResult() {
+  localStorage.setItem('gameResult', JSON.stringify( gameResult));
+  createScoreRow()
+}
+
+function createScoreRow() {
+  const scoreList = document.querySelector('.table-score__list');
+  if (localStorage.getItem('gameResult')) {
+    scoreList.textContent = '';
+    const arr = JSON.parse(localStorage.getItem('gameResult'));
+    arr.length > 9 ? arr.sort((a,b) => b - a).slice(0,10) : arr;
+    for(let i = 0; i < arr.length; i++) {
+      const score = arr[i];
+      const element = document.createElement('li');
+      element.classList.add('table-score__item');
+      const span = document.createElement('span');
+      span.classList.add('table-score__score');
+      span.textContent = `Attempts - ${score}`;
+      element.append(span);
+      scoreList.append(element);
+    }
+  } else {
+    return;
+  }
+
+}
+
+export {createScoreRow};

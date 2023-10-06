@@ -119,7 +119,6 @@ body {
   visibility: visible;
 }
 
-
 .overlay {
   position: fixed;
   left: 0;
@@ -127,7 +126,7 @@ body {
   top: 0;
   bottom: 0;
   background-color: rgba(43, 58, 81, 0.9);
-  z-index: 4;
+  z-index: 101;
 }
 
 .popup__inner {
@@ -155,7 +154,7 @@ body {
 
 .score-title {
   color: #C2B85B;
-  font-size: 36px;
+  font-size: 28px;
   line-height: 150%;
 }
 
@@ -168,12 +167,10 @@ body {
   background-color: #2b3953;
   max-width: 300px;
   padding: 5px 20px;
-  margin-bottom: 20px;
-  margin-top: 20px;
 }
 .score {
   color: #C2B85B;
-  font-size: 36px;
+  font-size: 28px;
   line-height: 150%;
 }
 
@@ -213,4 +210,101 @@ body {
 }
 .footer__rsschool-link:hover {
   opacity: 0.6;
+}
+
+
+/*-------results-------*/
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 40px 0;
+}
+
+
+.table-score__btn {
+  z-index: 100;
+  font-size: 28px;
+  line-height: 150%;
+  margin-left: auto;
+  position: relative;
+  color: #C2B85B;
+  border-radius: 30px;
+  background-color: #2b3953;
+  max-width: 300px;
+  padding: 5px 20px;
+  border: 3px solid #a0bade;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.table-score__btn:hover {
+  border-color: #ffffff;
+  box-shadow: 0px 4px 8px 6px rgba(240, 234, 234, 0.21);
+}
+
+/* .table-score__btn:after {
+  content: url(./assets/polygon.svg);
+  position: absolute;
+  width: 13px;
+  height: 12px;
+  top: 0;
+  right: 10px
+} */
+.table-score__list {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  z-index: 100;
+  color: #C2B85B;;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 10px;
+  border: 1px solid #C2B85B;;
+  opacity: 0;
+  visibility: hidden;
+  background-color: #2b3953;
+  transition: all 0.3s ease-in;
+}
+
+.table-score__list.table-score__list--active {
+  top: 150px;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+ul.table-score__list {
+  padding: 14px 20px 20px 20px;
+  max-width: 210px;
+  width: 100%;
+}
+.table-score__item {
+  border-bottom: 0.5px solid #C2B85B;;
+  font-size: 16px;
+  display: flex;
+}
+
+.table-score__score {
+  margin-left: auto;
+}
+
+.overlay-score {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(43, 58, 81, 0.9);
+  z-index: 99;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+}
+
+.overlay-score.overlay-score--active {
+  visibility: visible;
+  opacity: 1;
 }
