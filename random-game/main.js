@@ -1,9 +1,6 @@
 import data from './data.js';
 import { popup, createPopup, showPopup } from './js/popup.js';
-
-const score = document.querySelector('.score');
-let countScore = 0;
-score.textContent = countScore;
+import increaseAttempts from './js/attempts.js';
 
 const field = document.querySelector('.field');
 createPopup()
@@ -34,6 +31,7 @@ field.addEventListener('click', (e) => {
       cardsName.push(data[id].name);
     }
     if (openCard.length === 2) {
+      increaseAttempts()
       checkTwoCards();
     }   
   }

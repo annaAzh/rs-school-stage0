@@ -60,6 +60,8 @@ body {
   background-position: center center;
   background-size: cover;
   min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
 }
 
 .container {
@@ -138,4 +140,30 @@ body {
   line-height: 150%;
   text-align: center;
   margin-bottom: 20px;
+}
+
+
+/*-----score---------*/
+
+.score-title {
+  color: #C2B85B;
+  font-size: 36px;
+  line-height: 150%;
+}
+
+.count-box {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  border: 3px solid #a0bade;
+  border-radius: 30px;
+  background-color: #2b3953;
+  max-width: 300px;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+}
+.score {
+  color: #C2B85B;
+  font-size: 36px;
+  line-height: 150%;
 }
