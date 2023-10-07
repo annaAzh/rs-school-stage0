@@ -11,9 +11,6 @@ const scoreTable = () => {
       createScoreRow()
     }
   });
-
-
-
 };
 
 export default scoreTable;

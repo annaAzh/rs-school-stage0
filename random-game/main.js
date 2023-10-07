@@ -111,6 +111,7 @@ function resetGame() {
 function startNewGame() {
   countScore = 0;
   score.textContent = countScore;
+  gameResult = [];
   openCard = [];
   cardsName = [];
   playArray = [];
@@ -122,7 +123,13 @@ function startNewGame() {
 }
 
 function setGameResult() {
-  localStorage.setItem('gameResult', JSON.stringify( gameResult));
+  if (localStorage.getItem('gameResult')) {
+    const localStorageArr = JSON.parse(localStorage.getItem('gameResult'));
+    const resultArr = [...localStorageArr , ...gameResult];
+    localStorage.setItem('gameResult', JSON.stringify(resultArr));
+  } else {
+    localStorage.setItem('gameResult', JSON.stringify(gameResult));
+  }
   createScoreRow()
 }
 
@@ -131,7 +138,8 @@ function createScoreRow() {
   if (localStorage.getItem('gameResult')) {
     scoreList.textContent = '';
     const arr = JSON.parse(localStorage.getItem('gameResult'));
-    arr.length > 9 ? arr.sort((a,b) => b - a).slice(0,10) : arr;
+    arr.sort((a,b) => b - a)
+    arr.length > 9 ? arr.slice(0,10) : arr;
     for(let i = 0; i < arr.length; i++) {
       const score = arr[i];
       const element = document.createElement('li');
