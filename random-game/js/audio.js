@@ -12,7 +12,7 @@ const setSound = (isStartGame) => {
   let isVolume = true;
 
   if (isStartGame) {
-    let audio = createAudio('../assets/audio/audio.mp3');
+    let audio = createAudio('./assets/audio/audio.mp3');
     volumeBtn.addEventListener('click', () => {
       if (isVolume === true) {
         audio.volume = 0;
